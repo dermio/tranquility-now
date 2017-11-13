@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: jdDtpTXD8VjyEemcNpFeRjzr0SYXpfjK+dt1EUVmnFwbQDnH3uOj1Fldb21UP2c8o6mmvZyFPne8/wlPrCAmt8REva06/YdlmEtV7ead9/Jb70JP0uqDkYBkg0GmHors53jUNCdRNRV5oWKhl3QgKC0eHtpc6DBG3czcMv5kgeqbC/lQ/336D+f2RUDqXIyyo4ZwPd6ECioFJcfHjt+RAC3vd06sQ8iPZQP03JG3tVAUV0SGYu4LA6wbVvqqer6zp+Ao/sanvk7Pq6koRYNkKn1Z94GXNDFCzhkErI7UP+2YKTmdCTNyPwopbysvQgPmm7fwNRDy8JPrf2pY9NJILwX/iXUeW7R2h/Wx1wCq1EbqqkV/koN3nXXfnuYXLt2PH9/tkXOo9Q124C5UA5tkWkwbcduq8tgQthuaNfnG2cqQx4VQGvmhbSVQAOkGunvLccWzGS7CU3KAKuDP4smMKsYhCbe/Z13ha7zjTczcGgrZiGMQzgBDNWaF9YW2n6IAIPQ4FpWBdWvIYn+Q1eCHLw8iizPNUrO5dvjaLtsrT/MIee2qHx0U2Vha5txTTIRj1mnYPUAMNGEv/au4I8DBwt3Njc6D266opzxwwV1hT+Qr8bXDA9M4Ywi6oj1UNHqyt+5/7do0WVmgFKqBrqfxRT8QKa6txlslNMOIpEnm6yY=
+  app: dry-dawn-69875
+  on:
+    repo: dermio/node-capstone
