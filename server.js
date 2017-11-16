@@ -13,6 +13,14 @@ app.use(express.static("public"));
 mongoose.Promise = global.Promise;
 
 
+// GET route
+app.get("/", function (req, res) {
+// app.get("/blah", function (req, res) {
+  console.log(res);
+  res.send("GET request");
+});
+
+
 // previous code to start the server
 // app.listen(process.env.PORT || 8080);
 
