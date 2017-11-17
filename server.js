@@ -14,10 +14,15 @@ mongoose.Promise = global.Promise;
 
 
 // GET route
-app.get("/", function (req, res) {
-// app.get("/blah", function (req, res) {
-  console.log(res);
-  res.send("GET request");
+//app.get("/", function (req, res) {
+app.get("/all-stressors", function (req, res) {
+  console.log(res); // why can't I console.log here?
+  // res.send("GET request"); // this code works
+  Stressor
+    .find()
+    .then(stressors => {
+      res.json(stressors);
+    });
 });
 
 
