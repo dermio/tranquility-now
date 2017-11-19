@@ -24,6 +24,32 @@ function tearDownDb() {
 }
 
 
+// used to put randomish documents in db
+// so we have data to work with and assert about.
+// we insert this data into mongo
+function seedStressorData() {
+  console.info("seeding stressor data");
+  let stress = ["break up", "job loss", "neighbor", "grief",
+                "poor health", "neglect", "school", "financial",
+                "drug abuse", "poor diet"];
+  let activity = ["slow breathing", "soothing music", "writing",
+                  "stretch", "yoga", "play instrument", "meditate",
+                  "use guided imagery", "reading", "paint or draw"];
+
+  let seedData = [];
+  for (let i = 1; i <= 10; i++) {
+    seedData.push({
+      stress: stress[Math.floor(Math.random() * 9)],
+      activity: activity[Math.floor(Math.random() * 9)],
+      duration: Math.floor(Math.random() * 10) + 1, // 1-10 minutes
+      preHeartRate: Math.floor(Math.random() * 20) + 60, // 60-60 bpm
+      postHeartRate: Math.floor(Math.random() * 20) + 60 // 60-80 bpm
+    });
+  }
+  return seedData;
+}
+
+
 describe("test root url", function () {
   it("should return a status of 200", function () {
     return chai.request(app)
