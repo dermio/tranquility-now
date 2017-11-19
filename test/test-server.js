@@ -1,8 +1,10 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
+const mongoose = require("mongoose");
 
 const {app, runServer, closeServer} = require("../server");
 const {Stressor} = require("../models");
+const {TEST_DATABASE_URL} = require("../config");
 
 const should = chai.should();
 chai.use(chaiHttp);
