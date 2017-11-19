@@ -6,4 +6,4 @@ exports.PORT = process.env.PORT || 8080;
 
 // need TEST_DATABASE_URL for integration testing
 exports.TEST_DATABASE_URL = process.env.TEST_DATABASE_URL ||
-                            "mongodb://localhost/stress-app";
+                            "mongodb://localhost/test-stress-app";
