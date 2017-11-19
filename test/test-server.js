@@ -39,8 +39,8 @@ function seedStressorData() {
   let seedData = [];
   for (let i = 1; i <= 10; i++) {
     seedData.push({
-      stress: stress[Math.floor(Math.random() * 9)],
-      activity: activity[Math.floor(Math.random() * 9)],
+      stress: stress[Math.floor(Math.random() * 9)], // 0-9 index
+      activity: activity[Math.floor(Math.random() * 9)], // 0-9 index
       duration: Math.floor(Math.random() * 10) + 1, // 1-10 minutes
       preHeartRate: Math.floor(Math.random() * 20) + 60, // 60-60 bpm
       postHeartRate: Math.floor(Math.random() * 20) + 60 // 60-80 bpm
@@ -50,14 +50,35 @@ function seedStressorData() {
 }
 
 
-describe("test root url", function () {
-  it("should return a status of 200", function () {
-    return chai.request(app)
-      .get("/")
-      .then(function (res) {
-        // console.log(res);
-        res.should.have.status(200);
-        res.should.be.html; // Is this correct? Or should I see HTML page?
-      });
+describe("stressors API resource", function () {
+  before(function () {
+    return runServer(TEST_DATABASE_URL);
   });
+
+  beforeEach(function () {
+    return seedStressorData();
+  });
+
+  afterEach(function () {
+    // tear down database so we ensure no state from this test
+    // effects any coming after.
+    return tearDownDb();
+  });
+
+  after(function () {
+    return closeServer();
+  });
+
+  describe("test root url", function () {
+    it("should return a status of 200", function () {
+      return chai.request(app)
+        .get("/")
+        .then(function (res) {
+          // console.log(res);
+          res.should.have.status(200);
+          res.should.be.html; // Is this correct? Or should I see HTML page?
+        });
+    });
+  });
+
 });
