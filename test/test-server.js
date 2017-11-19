@@ -10,6 +10,20 @@ const should = chai.should();
 chai.use(chaiHttp);
 
 
+// this function deletes the entire database.
+// we'll call it in an `afterEach` block below
+// to ensure data from one test does not stick
+// around for next one
+function tearDownDb() {
+  return new Promise((resolve, reject) => {
+    console.warn("Deleting database");
+    mongoose.connection.dropDatabase()
+      .then(result => resolve(result))
+      .catch(err => reject(err))
+  });
+}
+
+
 describe("test root url", function () {
   it("should return a status of 200", function () {
     return chai.request(app)
