@@ -22,7 +22,11 @@ app.get("/stressors", function (req, res) {
     .find()
     .then(stressors => {
       // console.log(stressors); // stressors is an array of JSON docs
-      res.json(stressors);
+      res.json(stressors.map(stress => stress.apiRepr()));
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: "something went terribly wrong"});
     });
 });
 
