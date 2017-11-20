@@ -46,7 +46,7 @@ function seedStressorData() {
       postHeartRate: Math.floor(Math.random() * 20) + 60 // 60-80 bpm
     });
   }
-  return seedData;
+  return Stressor.insertMany(seedData);
 }
 
 
@@ -77,6 +77,29 @@ describe("stressors API resource", function () {
           // console.log(res);
           res.should.have.status(200);
           res.should.be.html; // Is this correct? Or should I see HTML page?
+        });
+    });
+  });
+
+  describe("GET endpoint", function () {
+    it("should return all existing stressors", function () {
+      // `res` is a variable in a Scope accessible to
+      // all then() function calls. It will be the response object
+      let res;
+
+      // Chai HTTP is a plugin for Chai. Chai uses Chai HTTP through
+      // the command: chai.use(chaiHttp), line 10
+      return chai.request(app)
+        .get("/stressors") // get() available to Chai HTTP, in Node.js
+        .then(function (_res) {
+          res = _res;
+          // console.log(res);
+          res.should.have.status(200);
+          res.body.should.have.length.of.at.least(1);
+          return Stressor.count();
+        })
+        .then(count => {
+          res.body.should.have.lengthOf(count);
         });
     });
   });
