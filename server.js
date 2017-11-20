@@ -16,7 +16,7 @@ mongoose.Promise = global.Promise;
 // GET route
 //app.get("/", function (req, res) {
 app.get("/stressors", function (req, res) {
-  console.log(res); // Why does the res look diff than log in Chai res?
+  // console.log(res); // Why does the res look diff than log in Chai res?
   // res.send("GET request"); // this code works
   Stressor
     .find()
