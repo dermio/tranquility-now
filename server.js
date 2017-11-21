@@ -30,6 +30,16 @@ app.get("/stressors", function (req, res) {
     });
 });
 
+app.get("/stressors/:id", (req, res) => {
+  Stressor
+    .findById(req.params.id)
+    .then(stressor => res.json(stressor.apiRepr()))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: "something went horribly awry"})
+    });
+});
+
 
 // previous code to start the server
 // app.listen(process.env.PORT || 8080);
