@@ -9,6 +9,7 @@ const {Stressor} = require("./models");
 const app = express();
 
 app.use(morgan("common"));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 mongoose.Promise = global.Promise;
 
@@ -37,6 +38,34 @@ app.get("/stressors/:id", (req, res) => {
     .catch(err => {
       console.error(err);
       res.status(500).json({error: "something went horribly awry"})
+    });
+});
+
+app.post("/stressors", (req, res) => {
+  let requiredFields = ["stress", "activity", "duration",
+    "preHeartRate", "postHeartRate"];
+
+  for (let i = 0; i < requiredFields.length; i++) {
+    let field = requiredFields[i];
+    if (!(field in req.body)) {
+      let message = `Missing \`${field}\` in request body`;
+      console.error(message);
+      return res.status(400).send(message);
+    }
+  }
+
+  Stressor
+    .create({
+      stress: req.body.stress,
+      activity: req.body.activity,
+      duration: req.body.duration,
+      preHeartRate: req.body.preHeartRate,
+      postHeartRate: req.body.postHeartRate
+    })
+    .then(stressor => res.status(201).json(stressor.apiRepr()))
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: "Something went wrong"});
     });
 });
 
