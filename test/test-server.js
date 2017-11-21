@@ -154,4 +154,53 @@ describe("stressors API resource", function () {
 
   });
 
+  describe("POST endpoint", function () {
+    // strategy: make a POST request with data,
+    // then prove that the stressor we get back has
+    // right keys, and that `id` is there (which means
+    // the data was inserted into db)
+
+    it("should add a new stressor", function () {
+      let newStressor = {
+        stress: "illness",
+        activity: "yoga",
+        duration: 9,
+        preHeartRate: 68,
+        postHeartRate: 58
+      };
+
+      return chai.request(app)
+        .post("/stressors")
+        .send(newStressor)
+        .then(function (res) {
+          // console.log(res);
+          res.should.have.status(201);
+          res.should.be.json;
+          res.should.be.a("object");
+          res.body.should.include.keys("id", "stress",
+            "activity", "duration", "preHeartRate", "postHeartRate");
+          res.body.activity.should.equal(newStressor.activity);
+          // Mongo creates a new id when document is inserted into database
+          res.body.id.should.not.be.null;
+          // console.log(res.body.id); // alpha-numeric Id
+          // console.log(newStressor.id); // undefined
+
+          res.body.stress.should.equal(newStressor.stress);
+          res.body.duration.should.equal(newStressor.duration);
+          res.body.preHeartRate.should.equal(newStressor.preHeartRate);
+          // Return a document from Mongo using Mongoose .findById()
+          return Stressor.findById(res.body.id);
+        })
+        .then(function (stress) { // stress is a single document from Mongo
+          // console.log(stress);
+          stress.stress.should.equal(newStressor.stress);
+          stress.activity.should.equal(newStressor.activity);
+          stress.duration.should.equal(newStressor.duration);
+          stress.postHeartRate.should.equal(newStressor.postHeartRate);
+        });
+    });
+  });
+
+  // Next PUT endpoint
+
 });
