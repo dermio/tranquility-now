@@ -98,10 +98,60 @@ describe("stressors API resource", function () {
           res.body.should.have.length.of.at.least(1);
           return Stressor.count();
         })
-        .then(count => {
+        .then(function (count) {
           res.body.should.have.lengthOf(count);
         });
     });
+
+    it("should return stressors with right fields", function () {
+      // Get back all stressors, and make sure they have
+      // the right keys and values.
+
+      let resStressor;
+      return chai.request(app)
+        .get("/stressors")
+        .then(function (res) {
+          // console.log(res);
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a("array");
+          res.body.should.have.length.of.at.least(1);
+
+          res.body.forEach(function (stressor) {
+            stressor.should.be.a("object");
+            // Use the keys in the returned object from the apiRepr method.
+            // This is because the apiRepr method is called
+            // in the GET request.
+            stressor.should.include.keys("id", "stress",
+              "activity", "duration", "preHeartRate", "postHeartRate");
+          });
+
+          // Check the Id for one of the stressors, then return that doc.
+          // In the next .then() method, check the values
+          // in the stressor document/object matches the database.
+          resStressor = res.body[0];
+          return Stressor.findById(resStressor.id);
+        })
+        // The `resStressor` is the response that's sent back to the Client.
+        // In the GET request, the apiRepr method will send back
+        // to the Client a representation of the stressor document
+        // in the database, instead of the document itself.
+        // The `stressor` is the actual document in the Mongo DB
+        // found by the Mongoose command findById().
+        .then(function (stressor) {
+          // console.log(resStressor);
+          // console.log(stressor);
+          resStressor.id.should.equal(stressor.id);
+          resStressor.stress.should.equal(stressor.stress);
+          resStressor.activity.should.equal(stressor.activity);
+          resStressor.duration.should.equal(stressor.duration);
+          resStressor.preHeartRate.should.equal(stressor.preHeartRate);
+        });
+    });
+
+    // NEXT, test GET request to: app.get("stressors/:id")
+    // it("should return stressor with right id", function () {});
+
   });
 
 });
