@@ -94,6 +94,15 @@ app.put("/stressors/:id", (req, res) => {
     .catch(err => res.status(500).json({message: "Something went wrong"}));
 });
 
+app.delete("/stressors/:id", (req, res) => {
+  Stressor
+    .findByIdAndRemove(req.params.id)
+    .then(() => {
+      console.log(`Deleted stressor with id \`${req.params.id}\``);
+      res.status(204).end();
+    });
+});
+
 
 // previous code to start the server
 // app.listen(process.env.PORT || 8080);

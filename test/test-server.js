@@ -203,7 +203,7 @@ describe("stressors API resource", function () {
 
   describe("PUT endpoint", function () {
     // strategy:
-    //  1. Get an existing post from db
+    //  1. Get an existing stressor from db
     //  2. Make a PUT request to update that post
     //  3. Prove post in db is correctly updated
     it("should update fields you send over", function () {
@@ -239,6 +239,45 @@ describe("stressors API resource", function () {
           stressor.activity.should.equal(updateData.activity);
           stressor.duration.should.equal(updateData.duration);
           stressor.preHeartRate.should.equal(updateData.preHeartRate);
+        });
+    });
+  });
+
+  describe("DELETE endpoint", function () {
+    // strategy:
+    //  1. get a stressor
+    //  2. make a DELETE request for that stressor's id
+    //  3. assert that response has right status code
+    //  4. prove that stressor with the id doesn't exist in db anymore
+    it("should delete a stressor by id", function () {
+      let stressor;
+
+      return Stressor
+        .findOne()
+        // _stressor is an existing document in Mongo returned by findOne()
+        .then(function (_stressor) {
+          stressor = _stressor;
+          // make a DELETE request with the id
+          return chai.request(app).delete(`/stressors/${stressor.id}`);
+        })
+        .then(function (res) { // res sent by DELETE request
+          res.should.have.status(204);
+          // stressor is a copy of the document before it was deleted,
+          // on line 253. This should return undefined or null.
+          // console.log(stressor);
+          return Stressor.findById(stressor.id);
+        })
+        .then(function (_stressor) {
+          // console.log(_stressor);
+          // _stressor was returned from the previous .then() method.
+          // It should have a value of undefined or null,
+          // because that document and id no longer exist.
+          should.not.exist(_stressor);
+
+          // Note: cannot extend null or undefined with should,
+          // because they are not proper objects.
+          // null.should.not.exist is NOT a valid statement
+          // This works: (_post === null).should.be.true
         });
     });
   });
