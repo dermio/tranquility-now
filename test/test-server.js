@@ -191,16 +191,56 @@ describe("stressors API resource", function () {
           // Return a document from Mongo using Mongoose .findById()
           return Stressor.findById(res.body.id);
         })
-        .then(function (stress) { // stress is a single document from Mongo
+        .then(function (stressor) { // stress is a single document from Mongo
           // console.log(stress);
-          stress.stress.should.equal(newStressor.stress);
-          stress.activity.should.equal(newStressor.activity);
-          stress.duration.should.equal(newStressor.duration);
-          stress.postHeartRate.should.equal(newStressor.postHeartRate);
+          stressor.stress.should.equal(newStressor.stress);
+          stressor.activity.should.equal(newStressor.activity);
+          stressor.duration.should.equal(newStressor.duration);
+          stressor.postHeartRate.should.equal(newStressor.postHeartRate);
         });
     });
   });
 
-  // Next PUT endpoint
+  describe("PUT endpoint", function () {
+    // strategy:
+    //  1. Get an existing post from db
+    //  2. Make a PUT request to update that post
+    //  3. Prove post in db is correctly updated
+    it("should update fields you send over", function () {
+      let updateData = {
+        stress: "work work boss boss",
+        activity: "dream about Hawaii",
+        duration: 10,
+        preHeartRate: 59
+      };
+
+      return Stressor
+        .findOne()
+        .then(function (stressor) {
+          updateData.id = stressor.id;
+          // console.log(updateData.id);
+
+          // make request then inspect it to make sure
+          // it reflects the data that was sent
+          return chai.request(app)
+            .put(`/stressors/${stressor.id}`)
+            .send(updateData);
+        })
+        .then(function (res) {
+          res.should.have.status(204);
+          // returns the document with correct Id
+          return Stressor.findById(updateData.id);
+        })
+        .then(function (stressor) {
+          // stressor is the returned document from Mongo
+          // with the updated values
+          // console.log(stressor);
+          stressor.stress.should.equal(updateData.stress);
+          stressor.activity.should.equal(updateData.activity);
+          stressor.duration.should.equal(updateData.duration);
+          stressor.preHeartRate.should.equal(updateData.preHeartRate);
+        });
+    });
+  });
 
 });
