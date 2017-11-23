@@ -89,7 +89,7 @@ app.put("/stressors/:id", (req, res) => {
     .findByIdAndUpdate(req.params.id, {$set: updated}, {new: true})
     .then(stressor => {
       // console.log(stressor); // the document with updated fields
-      res.status(204).end();
+      res.status(204).end(); // resp ends with send(), json(), or end()
     })
     .catch(err => res.status(500).json({message: "Something went wrong"}));
 });
@@ -99,7 +99,7 @@ app.delete("/stressors/:id", (req, res) => {
     .findByIdAndRemove(req.params.id)
     .then(() => {
       console.log(`Deleted stressor with id \`${req.params.id}\``);
-      res.status(204).end();
+      res.status(204).end(); // resp ends with send(), json(), or end()
     });
 });
 
