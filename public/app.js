@@ -1,5 +1,7 @@
+const MY_DATA = {}; // data from database stored here
+
 function handler() {
-  let myUrl = "http://localhost:8080";
+  let baseUrl = "http://localhost:8080";
 
   $("button").on("click", function (event) {
     event.preventDefault();
@@ -7,7 +9,7 @@ function handler() {
 
     $.ajax({
       method: "GET",
-      url: myUrl + "/all-stressors",
+      url: myUrl + "/stressors",
       dataType: "json",
       success: function (data) {
         console.log("[[CLIENT SIDE]]", data);
