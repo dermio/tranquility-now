@@ -191,8 +191,8 @@ describe("stressors API resource", function () {
           // Return a document from Mongo using Mongoose .findById()
           return Stressor.findById(res.body.id);
         })
-        .then(function (stressor) { // stress is a single document from Mongo
-          // console.log(stress);
+        .then(function (stressor) { // stressor is a single doc from Mongo
+          // console.log(stressor);
           stressor.stress.should.equal(newStressor.stress);
           stressor.activity.should.equal(newStressor.activity);
           stressor.duration.should.equal(newStressor.duration);
