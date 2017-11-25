@@ -9,7 +9,7 @@ function handler() {
 
     $.ajax({
       method: "GET",
-      url: myUrl + "/stressors",
+      url: baseUrl + "/stressors",
       dataType: "json",
       success: function (data) {
         console.log("[[CLIENT SIDE]]", data);
