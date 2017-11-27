@@ -9,9 +9,18 @@ const stressorSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  duration: Number, // or String
-  preHeartRate: Number,
-  postHeartRate: Number
+  duration: {
+    type: Number,
+    required: true
+  },
+  preHeartRate: {
+    type: Number,
+    required: true
+  },
+  postHeartRate: {
+    type: Number,
+    required: true
+  }
 });
 
 stressorSchema.methods.apiRepr = function () {
