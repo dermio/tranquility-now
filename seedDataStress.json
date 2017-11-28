@@ -1,0 +1,70 @@
+{
+  "stress": "too much work at job",
+  "activity": "meditate",
+  "duration": 5,
+  "preHeartRate": 80,
+  "postHeartRate": 70
+}
+{
+  "stress": "fight with spouse",
+  "activity": "read",
+  "duration": 10,
+  "preHeartRate": 70,
+  "postHeartRate": 68
+}
+{
+  "stress": "school work load",
+  "activity": "draw",
+  "duration": 5,
+  "preHeartRate": null,
+  "postHeartRate": null
+}
+{
+  "stress": "school, final exams",
+  "activity": "nap",
+  "duration": 10,
+  "preHeartRate": 80,
+  "postHeartRate": 60
+}
+{
+  "stress": "sickness",
+  "activity": "drawing",
+  "duration": 2,
+  "preHeartRate": 70,
+  "postHeartRate": 70
+}
+{
+  "stress": "taking care of children",
+  "activity": "Yoga, low impact",
+  "duration": 6,
+  "preHeartRate": 65,
+  "postHeartRate": 60
+}
+{
+  "stress": "finance, pay bills",
+  "activity": "Tai Chi",
+  "duration": 4,
+  "preHeartRate": 87,
+  "postHeartRate":78
+}
+{
+  "stress": "boss at work",
+  "activity": "listen to music",
+  "duration": 10,
+  "preHeartRate": 74,
+  "postHeartRate": 79
+}
+{
+  "stress": "sick parent",
+  "activity": "play instrument",
+  "duration": 8,
+  "preHeartRate": 78,
+  "postHeartRate": 70
+}
+{
+  "stress": "end relationship with partner",
+  "activity": "fold clothes",
+  "duration": 8,
+  "preHeartRate": 70,
+  "postHeartRate": 65
+}
