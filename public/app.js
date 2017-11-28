@@ -19,7 +19,7 @@ function displaySearchResults() {
       </div>`;
   }
 
-  $(".js-results-stressors").html(htmlString);
+  $(".js-results-dashboard").html(htmlString);
 }
 
 function getAllStressors() {
