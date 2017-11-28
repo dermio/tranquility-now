@@ -22,7 +22,7 @@ function displaySearchResults() {
   $(".js-results-stressors").html(htmlString);
 }
 
-function handler() {
+function getAllStressors() {
   let baseUrl = "http://localhost:8080";
 
   $("button").on("click", function (event) {
@@ -45,7 +45,16 @@ function handler() {
   });
 }
 
-$(handler);
+/* 
+The final Node app will have function calls in roughly this order:
+
+Note: the homeScreen() will either create a new user, or login user
+
+handler() => homeScreen() => getAllStressors() => 1. getOneStressorById()
+                                               => 2. postNewStressor()
+*/
+
+$(getAllStressors);
 
 
 /////////////////////////////
