@@ -10,8 +10,9 @@ function displaySearchResults() {
 
     htmlString +=
       `<div class="js-single-result">
-        <p>${stressorsData[i].id}</p>
+        <p>${stressorsData[i].stress}</p>
         <p>${stressorsData[i].activity}</p>
+        <p>${stressorsData[i].id}</p>
         <p>${stressorsData[i].duration}</p>
         <p>${stressorsData[i].preHeartRate}</p>
         <p>${stressorsData[i].postHeartRate}</p>
