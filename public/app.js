@@ -45,6 +45,10 @@ function getAllStressors() {
   });
 }
 
+function handler() {
+  getAllStressors();
+}
+
 /* 
 The final Node app will have function calls in roughly this order:
 
@@ -54,7 +58,7 @@ handler() => homeScreen() => getAllStressors() => 1. getOneStressorById()
                                                => 2. postNewStressor()
 */
 
-$(getAllStressors);
+$(handler);
 
 
 /////////////////////////////
