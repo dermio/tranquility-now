@@ -5,3 +5,8 @@ p {
 .js-single-result {
   border: 1px solid black;
 }
+
+.stressor-name {
+  color: black;
+  font-size: 20px;
+}
