@@ -1,7 +1,9 @@
 const MY_DATA = {}; // data from database stored here
 
 
-function displaySearchResults() {
+function displayDashBoard() {
+  // Dashboard is where all data from the GET request is displayed.
+
   let htmlString = "";
   let stressorsData = MY_DATA.data;
 
@@ -37,8 +39,8 @@ function getAllStressors() {
         console.log("[[CLIENT SIDE]]", data);
         MY_DATA.data = data;
 
-        // render HTML with data
-        displaySearchResults();
+        // After the GET request, render HTML with data.
+        displayDashBoard();
       }
     });
 
