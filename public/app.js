@@ -21,7 +21,7 @@ function displayDashBoard() {
       </div>`;
   }
 
-  $(".js-results-dashboard").html(htmlString);
+  $(".js-results").html(htmlString);
 }
 
 function getAllStressors() {
@@ -47,7 +47,30 @@ function getAllStressors() {
   });
 }
 
+function displayLogin() {
+  let htmlString =
+    `<p>Hello World</p>
+    <p>This page shows the Login and/or Create new user page</p>
+    <button>Click, GET all stressors</button>`;
+
+  /* This is the first page loaded to the client.
+  Will see a form to login with username and password.
+
+  Will also see a button to go to another page to create
+  new user account. Add another <section> for create User account? */
+
+  /* Listen for the button click to display the Dashboard.
+  Right now the button click will act as Authentication,
+  logging in or creating a new user. */
+
+  $("button").on("click", function (event) {
+    event.preventDefault();
+    getAllStressors();
+  });
+}
+
 function handler() {
+  // displayLogin();
   getAllStressors();
 }
 
