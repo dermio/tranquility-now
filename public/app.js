@@ -1,4 +1,39 @@
-const MY_DATA = {}; // data from database stored here
+const STATE_DATA = {}; // data from database stored here
+
+
+function createNavigationDashboard() {
+  /* Nav bar on the Dashboard
+  will create nav bar
+  1. logout
+  2. POST new stressor
+
+  */
+}
+
+function editStressor() {
+  /* From the Dashboard, Click on a stressor
+  1. Edit Stressor data (PUT)
+  2. After PUT request modified data entry in DB,
+    refresh to return to Dashboard.
+  */
+}
+
+function deleteStressor() {
+  /* From the Dashboard, Click on a stressor
+  1. Delete Stressor data (DELETE)
+  2. After DELETE request modified data entry in DB,
+    refresh to return to Dashboard.
+  */
+}
+
+
+function createNavigationNotDashboard() {
+  /* 
+  1. Return to dashboard
+  2. logout (probably)
+
+  */
+}
 
 
 function displayDashBoard() {
@@ -47,7 +82,7 @@ function getAllStressors() {
   });
 }
 
-function displayLogin() {
+function displayHomeScreen() {
   let htmlString =
     `<p>Hello World</p>
     <p>This page shows the Login and/or Create new user page</p>
@@ -69,10 +104,6 @@ function displayLogin() {
   });
 }
 
-function handler() {
-  // displayLogin();
-  getAllStressors();
-}
 
 /* 
 The final Node app will have function calls in roughly this order:
@@ -83,7 +114,7 @@ handler() => homeScreen() => getAllStressors() => 1. getOneStressorById()
                                                => 2. postNewStressor()
 */
 
-$(handler);
+$(displayHomeScreen);
 
 
 /////////////////////////////
