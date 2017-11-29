@@ -1,19 +1,10 @@
 const STATE_DATA = {}; // data from database stored here
 
 
-function createNavigationDashboard() {
-  /* Nav bar on the Dashboard
-  will create nav bar
-  1. logout
-  2. POST new stressor
-
-  */
-}
-
 function editStressor() {
   /* From the Dashboard, Click on a stressor
   1. Edit Stressor data (PUT)
-  2. After PUT request modified data entry in DB,
+  2. After PUT request modifies data entry in DB,
     refresh to return to Dashboard.
   */
 }
@@ -21,26 +12,32 @@ function editStressor() {
 function deleteStressor() {
   /* From the Dashboard, Click on a stressor
   1. Delete Stressor data (DELETE)
-  2. After DELETE request modified data entry in DB,
+  2. After DELETE request modifies data entry in DB,
     refresh to return to Dashboard.
   */
 }
 
+function createNavigationDashboard() {
+  /* will create Navigation Bar on the Dashboard
+  1. logout
+  2. POST new stressor
+
+  */
+}
 
 function createNavigationNotDashboard() {
-  /* 
+  /* will create Navigation Bar on the "page" that's NOT the Dashboard
   1. Return to dashboard
   2. logout (probably)
 
   */
 }
 
-
 function displayDashBoard() {
   // Dashboard is where all data from the GET request is displayed.
 
   let htmlString = "";
-  let stressorsData = MY_DATA.data;
+  let stressorsData = STATE_DATA.data;
 
   for (let i = 0; i < stressorsData.length; i++) {
     console.log(i);
@@ -72,7 +69,7 @@ function getAllStressors() {
       dataType: "json",
       success: function (data) {
         console.log("[[CLIENT SIDE]]", data);
-        MY_DATA.data = data;
+        STATE_DATA.data = data;
 
         // After the GET request, render HTML with data.
         displayDashBoard();
