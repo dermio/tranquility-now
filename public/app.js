@@ -20,8 +20,7 @@ function deleteStressor() {
 function createNavBarDashboard() {
   /* will create Navigation Bar on the Dashboard
   1. logout
-  2. POST new stressor
-  */
+  2. POST new stressor */
 
   let navBarHtml =
     `<nav class="navBarDash" role="navigation">
@@ -33,16 +32,14 @@ function createNavBarDashboard() {
 }
 
 function createNavBarNotDashboard() {
-  /* will create Navigation Bar on the "page" that's NOT the Dashboard
+  /* Will create Navigation Bar on the "page" that's NOT the Dashboard
   1. Return to dashboard
-  2. logout (probably)
+  2. logout (probably) */
 
-  */
 }
 
 function displayDashBoard() {
-  /*
-  Dashboard is the home page of a logged in user.
+  /* Dashboard is the home page of a logged in user.
   This page is where all user data from the GET request is displayed. */
 
   let htmlString = "";
@@ -68,7 +65,7 @@ function displayDashBoard() {
   // Render the Dashboard page
   $(".js-results").html(htmlString);
 
-  
+
   // Listen for button click to Create new Stressor
   $(".create-stressor-btn").on("click", function () {
     console.log("Clicked to Create new Stressor");
@@ -77,6 +74,9 @@ function displayDashBoard() {
   // Listen for button click to Log out user
   $(".logout-btn").on("click", function () {
     console.log("Clicked to log out user");
+
+    // Upon logging out, call displayHomeScreen()
+    displayHomeScreen();
   });
 }
 
