@@ -41,11 +41,14 @@ function createNavBarNotDashboard() {
 }
 
 function displayDashBoard() {
-  // Dashboard is where all data from the GET request is displayed.
+  /*
+  Dashboard is the home page of a logged in user.
+  This page is where all user data from the GET request is displayed. */
 
   let htmlString = "";
   let stressorsData = STATE_DATA.data;
 
+  // The nav bar HTML appears at the top of the user's home page.
   htmlString = createNavBarDashboard();
 
   for (let i = 0; i < stressorsData.length; i++) {
@@ -62,6 +65,7 @@ function displayDashBoard() {
       </div>`;
   }
 
+  // Render the Dashboard page
   $(".js-results").html(htmlString);
 }
 
