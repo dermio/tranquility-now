@@ -38,6 +38,18 @@ function createNavBarNotDashboard() {
 
 }
 
+function displayCreateNewStressor() {
+  /* Will create a page with a form to Create a new Stressor
+  1. The form page HTML appears to Create a new Stressor.
+  2. Input fields for stressor data.
+  3. When click Submit, make a POST request to database
+  4. A new page (eventually new Chart) will appear with the entered data.
+  5. A button needs to appear to return to user's Dashboard.
+  */
+
+  console.log("displayCreateNewStressor() was called");
+}
+
 function displayDashBoard() {
   /* Dashboard is the home page of a logged in user.
   This page is where all user data from the GET request is displayed. */
@@ -69,6 +81,9 @@ function displayDashBoard() {
   // Listen for button click to Create new Stressor
   $(".create-stressor-btn").on("click", function () {
     console.log("Clicked to Create new Stressor");
+
+    // When click create New Stressor, a form page will appear
+    displayCreateNewStressor();
   });
 
   // Listen for button click to Log out user
