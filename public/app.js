@@ -25,8 +25,8 @@ function createNavBarDashboard() {
 
   let navBarHtml =
     `<nav class="navBarDash" role="navigation">
-      <a href="#">Create new Stressor</a>
-      <a href="#">Logout</a>
+      <a href="#" class="create-stressor">Create new Stressor</a>
+      <a href="#" class="logout">Logout</a>
     </nav>`;
 
   return navBarHtml;
