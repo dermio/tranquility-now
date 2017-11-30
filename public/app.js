@@ -17,15 +17,22 @@ function deleteStressor() {
   */
 }
 
-function createNavigationDashboard() {
+function createNavBarDashboard() {
   /* will create Navigation Bar on the Dashboard
   1. logout
   2. POST new stressor
 
   */
+  let navBarHtml =
+    `<nav class="navBarDash" role="navigation">
+      <a href="">Create new Stressor</a>
+      <a href="">Logout</a>
+    </nav>`;
+
+  return navBarHtml;
 }
 
-function createNavigationNotDashboard() {
+function createNavBarNotDashboard() {
   /* will create Navigation Bar on the "page" that's NOT the Dashboard
   1. Return to dashboard
   2. logout (probably)
