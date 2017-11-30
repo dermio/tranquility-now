@@ -21,8 +21,8 @@ function createNavBarDashboard() {
   /* will create Navigation Bar on the Dashboard
   1. logout
   2. POST new stressor
-
   */
+  
   let navBarHtml =
     `<nav class="navBarDash" role="navigation">
       <a href="">Create new Stressor</a>
