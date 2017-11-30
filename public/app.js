@@ -90,9 +90,9 @@ function getAllStressors() {
 
 function displayHomeScreen() {
   let htmlString =
-    `<p>Hello World</p>
+    `<p>Hello World rendered by displayHomeScreen()</p>
     <p>This page shows the Login and/or Create new user page</p>
-    <button>Click, GET all stressors</button>`;
+    <button>Login/Create user => GET all stressors => display Dashboard</button>`;
 
   /* This is the first page loaded to the client.
   Will see a form to login with username and password.
@@ -103,6 +103,9 @@ function displayHomeScreen() {
   /* Listen for the button click to display the Dashboard.
   Right now the button click will act as Authentication,
   logging in or creating a new user. */
+
+  // target .js-results to render HomeScreen (login page)
+  $(".js-results").html(htmlString);
 
   $("button").on("click", function (event) {
     event.preventDefault();
