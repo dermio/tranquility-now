@@ -25,8 +25,8 @@ function createNavBarDashboard() {
 
   let navBarHtml =
     `<nav class="navBarDash" role="navigation">
-      <a href="#" class="create-stressor">Create new Stressor</a>
-      <a href="#" class="logout">Logout</a>
+      <a href="#" class="create-stressor-btn">Create new Stressor</a>
+      <a href="#" class="logout-btn">Logout</a>
     </nav>`;
 
   return navBarHtml;
@@ -67,13 +67,24 @@ function displayDashBoard() {
 
   // Render the Dashboard page
   $(".js-results").html(htmlString);
+
+  
+  // Listen for button click to Create new Stressor
+  $(".create-stressor-btn").on("click", function () {
+    console.log("Clicked to Create new Stressor");
+  });
+
+  // Listen for button click to Log out user
+  $(".logout-btn").on("click", function () {
+    console.log("Clicked to log out user");
+  });
 }
 
 function getAllStressors() {
   let baseUrl = "http://localhost:8080";
 
   $("button").on("click", function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("button clicked!");
 
     $.ajax({
@@ -82,6 +93,9 @@ function getAllStressors() {
       dataType: "json",
       success: function (data) {
         console.log("[[CLIENT SIDE]]", data);
+
+        /* The data retrieved from a successful GET request
+        will be stored in a global constant on the client side */
         STATE_DATA.data = data;
 
         // After the GET request, render HTML with data.
@@ -112,7 +126,7 @@ function displayHomeScreen() {
   $(".js-results").html(htmlString);
 
   $("button").on("click", function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     getAllStressors();
   });
 }
