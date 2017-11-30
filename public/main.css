@@ -11,6 +11,6 @@ p {
   font-size: 20px;
 }
 
-.hideScreen {
-  display: none;
+.navBarDash {
+  border: 1px solid red;
 }
