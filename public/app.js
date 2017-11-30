@@ -22,11 +22,11 @@ function createNavBarDashboard() {
   1. logout
   2. POST new stressor
   */
-  
+
   let navBarHtml =
     `<nav class="navBarDash" role="navigation">
-      <a href="">Create new Stressor</a>
-      <a href="">Logout</a>
+      <a href="#">Create new Stressor</a>
+      <a href="#">Logout</a>
     </nav>`;
 
   return navBarHtml;
@@ -45,6 +45,8 @@ function displayDashBoard() {
 
   let htmlString = "";
   let stressorsData = STATE_DATA.data;
+
+  htmlString = createNavBarDashboard();
 
   for (let i = 0; i < stressorsData.length; i++) {
     console.log(i);
