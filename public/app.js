@@ -38,8 +38,8 @@ function createNavBarNotDashboard() {
 
 }
 
-function displayCreateNewStressor() {
-  console.log("displayCreateNewStressor() was called");
+function displayCreateNewStressorForm() {
+  console.log("displayCreateNewStressorForm() was called");
 
   /* Will create a page with a form to Create a new Stressor
   1. The form page HTML appears to Create a new Stressor.
@@ -110,7 +110,7 @@ function displayDashBoard() {
     console.log("Clicked to Create new Stressor");
 
     // When click create New Stressor, a form page will appear
-    displayCreateNewStressor();
+    displayCreateNewStressorForm();
   });
 
   // Listen for button click to Log out user
