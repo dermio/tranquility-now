@@ -39,6 +39,8 @@ function createNavBarNotDashboard() {
 }
 
 function displayCreateNewStressor() {
+  console.log("displayCreateNewStressor() was called");
+
   /* Will create a page with a form to Create a new Stressor
   1. The form page HTML appears to Create a new Stressor.
   2. Input fields for stressor data.
@@ -47,7 +49,32 @@ function displayCreateNewStressor() {
   5. A button needs to appear to return to user's Dashboard.
   */
 
-  console.log("displayCreateNewStressor() was called");
+  let htmlString =
+    `<form action="/stressor" method="post" role="form" class="stressor-form">
+      <fieldset>
+        <legend>Enter Stressor and Relaxation activity</legend>
+
+        <label for="stress">Stress</label>
+        <input type="text" name="stress" id="stress" required>
+
+        <label for="relaxation">Relaxation Activity</label>
+        <input type="text" name="relaxation" id="relaxation" required>
+
+        <label for="duration">Duration in min</label>
+        <input type="number" name="duration" id="duration" required>
+
+        <label for="pre-HR">Pre Heart Rate</label>
+        <input type="number" name="pre-HR" id="pre-HR" required>
+
+        <label for="post-HR">Post Heart Rate</label>
+        <input type="number" name="post-HR" id="post-HR" required>
+
+        <button name="submit">Submit Stressor</button>
+      </fieldset>
+    </form>`;
+
+  // Render the form to POST stressor
+  $(".js-results").html(htmlString);
 }
 
 function displayDashBoard() {
@@ -90,7 +117,9 @@ function displayDashBoard() {
   $(".logout-btn").on("click", function () {
     console.log("Clicked to log out user");
 
-    // Upon logging out, call displayHomeScreen()
+    /* Upon logging out, call displayHomeScreen()
+    NOTE: this is NOT the correct way to LOG-OUT!
+    Later on will use real JWT to properly log out the user */
     displayHomeScreen();
   });
 }
