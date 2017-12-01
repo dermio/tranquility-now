@@ -16,8 +16,8 @@
   "stress": "school work load",
   "activity": "draw",
   "duration": 5,
-  "preHeartRate": null,
-  "postHeartRate": null
+  "preHeartRate": 50,
+  "postHeartRate": 50
 }
 {
   "stress": "school, final exams",
