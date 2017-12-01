@@ -172,7 +172,7 @@ function displayHomeScreen() {
   let htmlString =
     `<p>Hello World rendered by displayHomeScreen()</p>
     <p>This page shows the Login and/or Create new user page</p>
-    <button>Login/Create user => GET all stressors => display Dashboard</button>`;
+    <button class="home-screen-btn">Login/Create user => GET all stressors => display Dashboard</button>`;
 
   /* This is the first page loaded to the client.
   Will see a form to login with username and password.
@@ -187,8 +187,8 @@ function displayHomeScreen() {
   // target .js-results to render HomeScreen (login page)
   $(".js-results").html(htmlString);
 
-  $("button").on("click", function (event) {
-    // event.preventDefault();
+  $(".home-screen-btn").on("click", function (event) {
+    event.preventDefault();
     getAllStressors();
   });
 }
@@ -202,6 +202,10 @@ Note: the homeScreen() will either create a new user, or login user
 handler() => homeScreen() => getAllStressors() => 1. getOneStressorById()
                                                => 2. postNewStressor()
 */
+
+function startApp() {
+  displayHomeScreen();
+}
 
 $(displayHomeScreen);
 
