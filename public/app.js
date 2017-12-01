@@ -143,29 +143,25 @@ function displayDashBoard() {
 }
 
 function getAllStressors() {
+  // GET request to the database for the user's data
   let baseUrl = "http://localhost:8080";
 
-  $("button").on("click", function (event) {
-    // event.preventDefault();
-    console.log("button clicked!");
+  $.ajax({
+    method: "GET",
+    url: baseUrl + "/stressors",
+    dataType: "json",
+    success: function (data) {
+      console.log("[[CLIENT SIDE]]", data);
 
-    $.ajax({
-      method: "GET",
-      url: baseUrl + "/stressors",
-      dataType: "json",
-      success: function (data) {
-        console.log("[[CLIENT SIDE]]", data);
+      /* The data retrieved from a successful GET request
+      will be stored in a global constant on the client side */
+      STATE_DATA.data = data;
 
-        /* The data retrieved from a successful GET request
-        will be stored in a global constant on the client side */
-        STATE_DATA.data = data;
-
-        // After the GET request, render HTML with data.
-        displayDashBoard();
-      }
-    });
-
+      // After the GET request, render HTML with data.
+      displayDashBoard();
+    }
   });
+
 }
 
 function displayHomeScreen() {
