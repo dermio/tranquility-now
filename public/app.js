@@ -69,12 +69,30 @@ function displayCreateNewStressorForm() {
         <label for="post-HR">Post Heart Rate</label>
         <input type="number" name="post-HR" id="post-HR" required>
 
-        <button name="submit">Submit Stressor</button>
+        <button name="submit" class="submit-stressor-btn">
+          Submit new Stressor
+        </button>
       </fieldset>
     </form>`;
 
   // Render the form to POST stressor
   $(".js-results").html(htmlString);
+
+  // Listen for submission on Form to create new stressor, POST request
+  $(".stressor-form").on("submit", function () {
+    event.preventDefault();
+    console.log("submit new stressor, POST request to DB");
+
+    /*
+    Next need to make POST request to database.
+    If successful, the data sent to DB will be displayed as a chart.
+    For now, return the data from the DB and give the message link
+    to return to the Dashboard.
+
+    The Dashboard should show the newly added data.
+    */
+
+  });
 }
 
 function displayDashBoard() {
