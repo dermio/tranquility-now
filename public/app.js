@@ -99,19 +99,43 @@ function displayCreateNewStressorForm() {
     event.preventDefault();
     console.log("submit new stressor, next Function call for Post request");
 
-    /*
-    1. Next need to make POST request to database.
+    /* Grab user data from Form fields, pass as argument
+    to createNewStressor to make POST request
+    The form user data should be a JS object.
+    Use JSON.stringify() */
+
+    let formUserDataRLynch = {
+      stress: this.stress.value,
+      activity: this.activity.value,
+      duration: this.duration.value,
+      preHeartRate: this.preHR.value,
+      postHeartRate: this.postHR.value
+    };
+
+    let jsonStringRLynch = JSON.stringify(formUserDataRLynch);
+
+    let formUserData = {
+      stress: $(this).find("#stress").val(),
+      activity: $(this).find("#activity").val(),
+      duration: $(this).find("#duration").val(),
+      preHeartRate: $(this).find("#preHR").val(),
+      postHeartRate: $(this).find("#postHR").val()
+    };
+
+    let jsonStringFormUserData = JSON.stringify(formUserData);
+
+    console.log(jsonStringRLynch);
+    console.log(jsonStringFormUserData);
+
+    console.log(this);
+    console.log($(this));
+
+    /* Next need to make POST request to database.
     If successful, the data sent to DB will be displayed as a chart.
     For now, return the data from the DB and give the message link
-    to return to the Dashboard.
+    to return to the Dashboard. */
 
-    2. The Dashboard should show the newly added data.
-    */
-
-    /* 1. Grab user data from Form fields, pass as argument
-    to createNewStressor to make POST request */
-    let formUserData = ""; // Will equal for data from form
-    createNewStressor(formUserData);
+    // createNewStressor(jsonStringFormUserData);
 
   });
 }
