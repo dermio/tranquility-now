@@ -55,7 +55,7 @@ function displayCreateNewStressorForm() {
         <label for="post-HR">Post Heart Rate</label>
         <input type="number" name="post-HR" id="post-HR" required>
 
-        <button name="submit" class="submit-stressor-btn">
+        <button type="submit" class="submit-stressor-btn">
           Submit new Stressor
         </button>
       </fieldset>
@@ -65,7 +65,7 @@ function displayCreateNewStressorForm() {
   $(".js-results").html(htmlString);
 
   // Listen for submission on Form to create new stressor, POST request
-  $(".stressor-form").on("submit", function () {
+  $(".stressor-form").on("submit", function (event) {
     event.preventDefault();
     console.log("submit new stressor, POST request to DB");
 
@@ -113,7 +113,8 @@ function displayDashBoard() {
 
 
   // Listen for button click to Create new Stressor
-  $(".create-stressor-btn").on("click", function () {
+  $(".create-stressor-btn").on("click", function (event) {
+    event.preventDefault();
     console.log("Clicked to Create new Stressor");
 
     // When click create New Stressor, a form page will appear
@@ -121,7 +122,8 @@ function displayDashBoard() {
   });
 
   // Listen for button click to Log out user
-  $(".logout-btn").on("click", function () {
+  $(".logout-btn").on("click", function (event) {
+    event.preventDefault();
     console.log("Clicked to log out user");
 
     /* Upon logging out, call displayHomeScreen()
