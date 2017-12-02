@@ -97,7 +97,7 @@ function displayCreateNewStressorForm() {
   // Listen for submission on Form to create new stressor, POST request
   $(".stressor-form").on("submit", function (event) {
     event.preventDefault();
-    console.log("submit new stressor, next call Func for Post request");
+    console.log("submit new stressor, next Function call for Post request");
 
     /*
     1. Next need to make POST request to database.
@@ -229,7 +229,7 @@ function startApp() {
   displayHomeScreen();
 }
 
-$(displayHomeScreen);
+$(startApp);
 
 
 /////////////////////////////
