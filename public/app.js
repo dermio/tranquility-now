@@ -17,20 +17,6 @@ function deleteStressor() {
   */
 }
 
-function createNavBarDashboard() {
-  /* will create Navigation Bar on the Dashboard
-  1. logout
-  2. POST new stressor */
-
-  let navBarHtml =
-    `<nav class="navBarDash" role="navigation">
-      <a href="#" class="create-stressor-btn">Create new Stressor</a>
-      <a href="#" class="logout-btn">Logout</a>
-    </nav>`;
-
-  return navBarHtml;
-}
-
 function createNavBarNotDashboard() {
   /* Will create Navigation Bar on the "page" that's NOT the Dashboard
   1. Return to dashboard
@@ -99,15 +85,18 @@ function displayDashBoard() {
   /* Dashboard is the home page of a logged in user.
   This page is where all user data from the GET request is displayed. */
 
-  let htmlString = "";
+  /* First populate the htmlString with the navigation bar HTML
+  that appears at the top of the user's dashboard */
+  let htmlString =
+    `<nav class="navBarDash" role="navigation">
+      <a href="#" class="create-stressor-btn">Create new Stressor</a>
+      <a href="#" class="logout-btn">Logout</a>
+    </nav>`;
+
   let stressorsData = STATE_DATA.data;
 
-  // The nav bar HTML appears at the top of the user's home page.
-  htmlString = createNavBarDashboard();
-
   for (let i = 0; i < stressorsData.length; i++) {
-    console.log(i);
-
+    // Next populate the htmlString with stressor data
     htmlString +=
       `<div class="js-single-result">
         <p class="stressor-name">${stressorsData[i].stress}</p>
