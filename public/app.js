@@ -24,6 +24,36 @@ function createNavBarNotDashboard() {
 
 }
 
+function createNewStressor(dataFromForm) {
+  console.log("createNewStressor() was called, making POST request");
+  /* Create Stressor
+  1. POST request
+  2. display newly created stressor as a CHART (display as data for now)
+  */
+
+  /*
+  1. data needs to be JS object,
+  2. Keys must be the same as in Model, values come from the form
+  3. use jQuery to grab the data from form and put in JS object
+  4. JSON.stringify(Javascript data object)
+  */
+
+  let dataPost; // references dataFromForm, needs to be JSON.stringified
+
+  // Pass form data to $.ajax(). The data is sent in POST.
+  $.ajax({
+    method: "POST",
+    url: "/stressors",
+    data: dataPost, // see line 41
+    dataType: json,
+    contentType: "application/json",
+    success: function (data) {
+      // on success, call displayStressorChart()
+    }
+  });
+
+}
+
 function displayCreateNewStressorForm() {
   console.log("displayCreateNewStressorForm() was called");
 
@@ -67,16 +97,21 @@ function displayCreateNewStressorForm() {
   // Listen for submission on Form to create new stressor, POST request
   $(".stressor-form").on("submit", function (event) {
     event.preventDefault();
-    console.log("submit new stressor, POST request to DB");
+    console.log("submit new stressor, next call Func for Post request");
 
     /*
-    Next need to make POST request to database.
+    1. Next need to make POST request to database.
     If successful, the data sent to DB will be displayed as a chart.
     For now, return the data from the DB and give the message link
     to return to the Dashboard.
 
-    The Dashboard should show the newly added data.
+    2. The Dashboard should show the newly added data.
     */
+
+    /* 1. Grab user data from Form fields, pass as argument
+    to createNewStressor to make POST request */
+    let formUserData = ""; // Will equal for data from form
+    createNewStressor(formUserData);
 
   });
 }
