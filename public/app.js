@@ -73,17 +73,17 @@ function displayCreateNewStressorForm() {
         <label for="stress">Stress</label>
         <input type="text" name="stress" id="stress" required>
 
-        <label for="relaxation">Relaxation Activity</label>
-        <input type="text" name="relaxation" id="relaxation" required>
+        <label for="activity">Relaxation Activity</label>
+        <input type="text" name="activity" id="activity" required>
 
         <label for="duration">Duration in min</label>
         <input type="number" name="duration" id="duration" required>
 
-        <label for="pre-HR">Pre Heart Rate</label>
-        <input type="number" name="pre-HR" id="pre-HR" required>
+        <label for="preHR">Pre Heart Rate</label>
+        <input type="number" name="preHR" id="preHR" required>
 
-        <label for="post-HR">Post Heart Rate</label>
-        <input type="number" name="post-HR" id="post-HR" required>
+        <label for="postHR">Post Heart Rate</label>
+        <input type="number" name="postHR" id="postHR" required>
 
         <button type="submit" class="submit-stressor-btn">
           Submit new Stressor
