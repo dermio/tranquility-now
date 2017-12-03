@@ -17,15 +17,8 @@ function deleteStressor() {
   */
 }
 
-function createNavBarNotDashboard() {
-  /* Will create Navigation Bar on the "page" that's NOT the Dashboard
-  1. Return to dashboard
-  2. logout (probably) */
-
-}
-
 function displayStressorChart(dataId) {
-  /* Will display as chart
+  /* Will display one stressor as chart, for GET by id or POST.
   1. Need nav bar to go back to user Dashboard
   2. Dashboard will include NEW entry for created Stressor */
   console.log("displayStressorChart() was called, for GET by id or POST");
