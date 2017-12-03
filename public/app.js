@@ -38,16 +38,17 @@ function createNewStressor(dataFromForm) {
   4. JSON.stringify(Javascript data object)
   */
 
-  let dataPost; // references dataFromForm, needs to be JSON.stringified
-
-  // Pass form data to $.ajax(). The data is sent in POST.
+  /* When createNewStressor() is called, the argument referenced
+  by dataFromForm has already been JSON.stringified.
+  Pass dataFromForm to $.ajax() to make POST request. */
   $.ajax({
     method: "POST",
     url: "/stressors",
-    data: dataPost, // see line 41
-    dataType: json,
+    data: dataFromForm, // Value already stringified.
+    dataType: "json",
     contentType: "application/json",
     success: function (data) {
+      console.log(data);
       // on success, call displayStressorChart()
     }
   });
@@ -122,10 +123,10 @@ function displayCreateNewStressorForm() {
       postHeartRate: $(this).find("#postHR").val()
     };
 
-    let jsonStringFormUserData = JSON.stringify(formUserData);
+    let jsonStringifiedFormUserData = JSON.stringify(formUserData);
 
     console.log(jsonStringRLynch);
-    console.log(jsonStringFormUserData);
+    console.log(jsonStringifiedFormUserData);
 
     console.log(this);
     console.log($(this));
@@ -135,7 +136,7 @@ function displayCreateNewStressorForm() {
     For now, return the data from the DB and give the message link
     to return to the Dashboard. */
 
-    // createNewStressor(jsonStringFormUserData);
+    createNewStressor(jsonStringifiedFormUserData);
 
   });
 }
