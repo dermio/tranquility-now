@@ -24,6 +24,13 @@ function createNavBarNotDashboard() {
 
 }
 
+function displayStressorChart() {
+  console.log("displayStressorChart() was called, for GET by id or POST");
+  /* Will display as chart
+  1. Need nav bar to go back to user Dashboard
+  2. Dashboard will include NEW entry for created Stressor */
+}
+
 function createNewStressor(dataFromForm) {
   console.log("createNewStressor() was called, making POST request");
   /* Create Stressor
@@ -48,8 +55,8 @@ function createNewStressor(dataFromForm) {
     dataType: "json",
     contentType: "application/json",
     success: function (data) {
-      console.log(data);
-      // on success, call displayStressorChart()
+      console.log("[[RESPONSE FROM SERVER]]", data);
+      displayStressorChart();
     }
   });
 
