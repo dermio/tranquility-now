@@ -25,11 +25,21 @@ function createNavBarNotDashboard() {
 }
 
 function displayStressorChart(dataId) {
-  console.log("displayStressorChart() was called, for GET by id or POST");
-  console.log(dataId);
   /* Will display as chart
   1. Need nav bar to go back to user Dashboard
   2. Dashboard will include NEW entry for created Stressor */
+  console.log("displayStressorChart() was called, for GET by id or POST");
+  console.log(dataId);
+
+  let htmlString =
+    `<nav class="navBarStressor" role="navigation">
+      <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
+      <a href="#" class="edit-stressor-btn">Edit this Stressor</a>
+      <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
+    </nav>`;
+
+    $(".js-results").html(htmlString);
+
 }
 
 function createNewStressor(dataFromForm) {
