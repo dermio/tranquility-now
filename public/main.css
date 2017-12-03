@@ -12,7 +12,7 @@ p {
   font-size: 20px;
 }
 
-.navBarDash {
+.navBarDash, .navBarStressor {
   border: 1px solid red;
 }
 
