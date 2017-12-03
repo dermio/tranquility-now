@@ -24,8 +24,9 @@ function createNavBarNotDashboard() {
 
 }
 
-function displayStressorChart() {
+function displayStressorChart(dataId) {
   console.log("displayStressorChart() was called, for GET by id or POST");
+  console.log(dataId);
   /* Will display as chart
   1. Need nav bar to go back to user Dashboard
   2. Dashboard will include NEW entry for created Stressor */
@@ -56,7 +57,16 @@ function createNewStressor(dataFromForm) {
     contentType: "application/json",
     success: function (data) {
       console.log("[[RESPONSE FROM SERVER]]", data);
-      displayStressorChart();
+      console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
+
+      // Push the response data from the server to const STATE_DATA.data
+      STATE_DATA.data.push(data);
+      console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
+
+      let resDataId = data.id;
+      console.log(resDataId);
+
+      displayStressorChart(resDataId);
     }
   });
 
@@ -132,11 +142,11 @@ function displayCreateNewStressorForm() {
 
     let jsonStringifiedFormUserData = JSON.stringify(formUserData);
 
-    console.log(jsonStringRLynch);
+    // console.log(jsonStringRLynch);
     console.log(jsonStringifiedFormUserData);
 
-    console.log(this);
-    console.log($(this));
+    // console.log(this);
+    // console.log($(this));
 
     /* Next need to make POST request to database.
     If successful, the data sent to DB will be displayed as a chart.
