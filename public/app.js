@@ -31,8 +31,9 @@ function displayStressorChart(dataId) {
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
     </nav>`;
 
-    $(".js-results").html(htmlString);
+  $(".js-results").html(htmlString);
 
+console.log(STATE_DATA)
 }
 
 function createNewStressor(dataFromForm) {
@@ -70,6 +71,8 @@ function createNewStressor(dataFromForm) {
       console.log(resDataId);
 
       displayStressorChart(resDataId);
+
+      // Marius Banea says after POST request make a GET request??
     }
   });
 
@@ -215,11 +218,11 @@ function displayDashBoard() {
 
 function getAllStressors() {
   // GET request to the database for the user's data
-  let baseUrl = "http://localhost:8080";
+  //let baseUrl = "http://localhost:8080";
 
   $.ajax({
     method: "GET",
-    url: baseUrl + "/stressors",
+    url: "/stressors",
     dataType: "json",
     success: function (data) {
       console.log("[[CLIENT SIDE]]", data);
