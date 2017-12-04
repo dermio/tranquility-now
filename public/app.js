@@ -17,23 +17,38 @@ function deleteStressor() {
   */
 }
 
-function displayStressorChart(dataId) {
+function displayStressorChart(oneStressor) {
   /* Will display one stressor as chart, for GET by id or POST.
   1. Need nav bar to go back to user Dashboard
   2. Dashboard will include NEW entry for created Stressor */
   console.log("displayStressorChart() was called, for GET by id or POST");
-  console.log(dataId);
+  console.log(STATE_DATA);
+  console.log(oneStressor);
 
   let htmlString =
     `<nav class="navBarStressor" role="navigation">
       <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
       <a href="#" class="edit-stressor-btn">Edit this Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
-    </nav>`;
+    </nav>
+
+    <div class="js-single-result">
+      <p class="stressor-name">${oneStressor.stress}</p>
+      <p>${oneStressor.activity}</p>
+      <p>${oneStressor.id}</p>
+      <p>${oneStressor.duration}</p>
+      <p>${oneStressor.preHeartRate}</p>
+      <p>${oneStressor.postHeartRate}</p>
+    </div>`;
+
 
   $(".js-results").html(htmlString);
 
-console.log(STATE_DATA)
+  /* Need event listeners for navigation bar
+  1. return to dashboard
+  2. Edit stressor
+  3. Delete stressor */
+
 }
 
 function createNewStressor(dataFromForm) {
@@ -59,18 +74,18 @@ function createNewStressor(dataFromForm) {
     data: dataFromForm, // Value already stringified.
     dataType: "json",
     contentType: "application/json",
-    success: function (data) {
-      console.log("[[RESPONSE FROM SERVER]]", data);
+    success: function (resData) {
+      console.log("[[RESPONSE FROM SERVER]]", resData);
       console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
 
       // Push the response data from the server to const STATE_DATA.data
-      STATE_DATA.data.push(data);
+      STATE_DATA.data.push(resData);
       console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
 
-      let resDataId = data.id;
+      let resDataId = resData.id;
       console.log(resDataId);
 
-      displayStressorChart(resDataId);
+      displayStressorChart(resData);
 
       // Marius Banea says after POST request make a GET request??
     }
