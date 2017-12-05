@@ -56,12 +56,14 @@ function displayStressorChart(oneStressor) {
 
 }
 
-function getStressorById() {
+function getStressorById(uniqueId) {
   /*
   1. Event listener, Click the title, gets the ID and triggers GET req by Id
   2. AJAX request, GET method using id
   3. On success, call displayStressorChart(resData) with res data
   */
+  console.log("getStressorById() was called");
+  console.log(uniqueId);
 
 }
 
@@ -245,6 +247,14 @@ function displayDashBoard() {
     Later on will use real JWT to properly log out the user */
     displayHomeScreen();
   });
+
+  /* Listen for button or stressor name click to grab by Id
+  for one stressor. Then call getStressorById() with Id argument */
+  $(".stressor-name").on("click", function (event) {
+    let stressorId = $(this).parent().attr("id");
+    getStressorById(stressorId);
+  });
+
 }
 
 function getAllStressors() {
