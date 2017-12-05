@@ -17,11 +17,12 @@ p {
   cursor: pointer;
 }
 
-.navBarDash, .navBarStressor {
+/********** Navigation Bars **********/
+.navbar-dashboard, .navbar-stressor-chart {
   border: 1px solid red;
 }
 
-/********** Create Stressor Form **********/
+/********** Create Stressor Form, Edit Stressor Form **********/
 /* Make sure the labels and inputs are block level elements */
 label, input {
   display: block;
