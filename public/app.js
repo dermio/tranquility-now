@@ -9,12 +9,13 @@ function deleteStressor() {
 
 }
 
-function editStressor() {
+function editStressor(uniqueId) {
   /* From the Dashboard, Click on a stressor
   1. Edit Stressor data (PUT)
   2. After PUT request modifies data entry in DB,
     refresh to return to Dashboard. */
   console.log("editStressor() was called");
+  console.log(uniqueId);
 }
 
 function displayStressorChart(oneStressor) {
@@ -24,6 +25,9 @@ function displayStressorChart(oneStressor) {
   console.log("displayStressorChart() was called, for GET by id or POST");
   console.log(STATE_DATA);
   console.log(oneStressor);
+
+  let stressorId = oneStressor.id;
+  console.log(stressorId);
 
   let htmlString =
     `<nav class="navBarStressor" role="navigation">
@@ -56,7 +60,9 @@ function displayStressorChart(oneStressor) {
 
   $(".edit-stressor-btn").on("click", function (event) {
     event.preventDefault();
-    editStressor();
+
+    // Call editStressor() for PUT request.
+    editStressor(stressorId);
   });
 
 }
@@ -265,6 +271,7 @@ function displayDashBoard() {
   /* Listen for button or stressor name click to grab Id
   of single stressor. */
   $(".stressor-name").on("click", function (event) {
+    event.preventDefault();
     let stressorId = $(this).parent().attr("id");
 
     // Call getStressorById() with Id argument.
