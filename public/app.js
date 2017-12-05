@@ -32,7 +32,7 @@ function displayStressorChart(oneStressor) {
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
     </nav>
 
-    <div class="js-single-result">
+    <div class="js-single-result" id="${oneStressor.id}">
       <p class="stressor-name">${oneStressor.stress}</p>
       <p>${oneStressor.activity}</p>
       <p>${oneStressor.id}</p>
@@ -48,6 +48,15 @@ function displayStressorChart(oneStressor) {
   1. return to dashboard
   2. Edit stressor
   3. Delete stressor */
+
+}
+
+function getStressorById() {
+  /*
+  1. Event listener, Click the title, gets the ID and triggers GET req by Id
+  2. AJAX request, GET method using id
+  3. On success, call displayStressorChart(resData) with res data
+  */
 
 }
 
@@ -143,6 +152,7 @@ function displayCreateNewStressorForm() {
     The form user data should be a JS object.
     Use JSON.stringify() */
 
+    /* Explain later Ryan solution
     let formUserDataRLynch = {
       stress: this.stress.value,
       activity: this.activity.value,
@@ -152,6 +162,7 @@ function displayCreateNewStressorForm() {
     };
 
     let jsonStringRLynch = JSON.stringify(formUserDataRLynch);
+    */
 
     let formUserData = {
       stress: $(this).find("#stress").val(),
@@ -196,7 +207,7 @@ function displayDashBoard() {
   for (let i = 0; i < stressorsData.length; i++) {
     // Next populate the htmlString with stressor data
     htmlString +=
-      `<div class="js-single-result">
+      `<div class="js-single-result" id="${stressorsData[i].id}">
         <p class="stressor-name">${stressorsData[i].stress}</p>
         <p>${stressorsData[i].activity}</p>
         <p>${stressorsData[i].id}</p>
@@ -233,7 +244,7 @@ function displayDashBoard() {
 
 function getAllStressors() {
   // GET request to the database for the user's data
-  //let baseUrl = "http://localhost:8080";
+  // let baseUrl = "http://localhost:8080";
 
   $.ajax({
     method: "GET",
