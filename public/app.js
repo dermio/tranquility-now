@@ -69,7 +69,9 @@ function getStressorById(uniqueId) {
     url: "/stressors/" + uniqueId,
     dataType: "json",
     success: function (resData) {
-      console.log("[[CLIENT-SIDE]]", resData);
+      console.log("[[RESPONSE FROM SERVER, GET BY ID SUCCESSFUL]]", resData);
+
+      displayStressorChart(resData);
     }
   });
 }
@@ -98,7 +100,7 @@ function createNewStressor(dataFromForm) {
     dataType: "json",
     contentType: "application/json",
     success: function (resData) {
-      console.log("[[RESPONSE FROM SERVER]]", resData);
+      console.log("[[RESPONSE FROM SERVER, POST SUCCESSFUL]]", resData);
       console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
 
       // Push the response data from the server to const STATE_DATA.data
@@ -274,12 +276,12 @@ function getAllStressors() {
     method: "GET",
     url: "/stressors",
     dataType: "json",
-    success: function (data) {
-      console.log("[[CLIENT SIDE]]", data);
+    success: function (resData) {
+      console.log("[[RESPONSE FROM SERVER, GET SUCCESSFUL]]", resData);
 
       /* The data retrieved from a successful GET request
       will be stored in a global constant on the client side */
-      STATE_DATA.data = data;
+      STATE_DATA.data = resData;
 
       // After the GET request, render HTML with data.
       displayDashBoard();
