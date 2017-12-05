@@ -1,20 +1,20 @@
 const STATE_DATA = {}; // data from database stored here
 
 
-function editStressor() {
-  /* From the Dashboard, Click on a stressor
-  1. Edit Stressor data (PUT)
-  2. After PUT request modifies data entry in DB,
-    refresh to return to Dashboard.
-  */
-}
-
 function deleteStressor() {
   /* From the Dashboard, Click on a stressor
   1. Delete Stressor data (DELETE)
   2. After DELETE request modifies data entry in DB,
-    refresh to return to Dashboard.
-  */
+    refresh to return to Dashboard. */
+
+}
+
+function editStressor() {
+  /* From the Dashboard, Click on a stressor
+  1. Edit Stressor data (PUT)
+  2. After PUT request modifies data entry in DB,
+    refresh to return to Dashboard. */
+  console.log("editStressor() was called");
 }
 
 function displayStressorChart(oneStressor) {
@@ -52,6 +52,11 @@ function displayStressorChart(oneStressor) {
   $(".return-dashboard-btn").on("click", function (event) {
     event.preventDefault();
     displayDashBoard();
+  });
+
+  $(".edit-stressor-btn").on("click", function (event) {
+    event.preventDefault();
+    editStressor();
   });
 
 }
