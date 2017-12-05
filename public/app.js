@@ -44,7 +44,7 @@ function displayStressorChart(oneStressor) {
   console.log(stressorId);
 
   let htmlString =
-    `<nav class="navBarStressor" role="navigation">
+    `<nav class="navbar-stressor-chart" role="navigation">
       <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
       <a href="#" class="edit-stressor-btn">Edit this Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
@@ -156,7 +156,7 @@ function displayCreateNewStressorForm() {
   */
 
   let htmlString =
-    `<form action="/stressor" method="post" role="form" class="stressor-form">
+    `<form action="/stressor" method="post" role="form" class="create-stressor-form">
       <fieldset>
         <legend>Enter Stressor and Relaxation activity</legend>
 
@@ -185,7 +185,7 @@ function displayCreateNewStressorForm() {
   $(".js-results").html(htmlString);
 
   // Listen for submission on Form to create new stressor, POST request
-  $(".stressor-form").on("submit", function (event) {
+  $(".create-stressor-form").on("submit", function (event) {
     event.preventDefault();
     console.log("submit new stressor, next Function call for Post request");
 
