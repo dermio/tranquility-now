@@ -18,6 +18,20 @@ function editStressor(uniqueId) {
   console.log(uniqueId);
 }
 
+function displayEditStressorForm(oneStressor) {
+  /*
+  1. Display a form to allow the user to change desired field values.
+  2. Keep track of the field values the user changes (in an object)?
+  3. On form submission call editStressor() with:
+      a. stressor id
+      b. changed field values
+  4. Only the changed field values will be part of the PUT request.
+  */
+  console.log("displayEditStressorForm() was called");
+  console.log(oneStressor);
+
+}
+
 function displayStressorChart(oneStressor) {
   /* Will display one stressor as chart, for GET by id or POST.
   1. Need nav bar to go back to user Dashboard
@@ -61,8 +75,9 @@ function displayStressorChart(oneStressor) {
   $(".edit-stressor-btn").on("click", function (event) {
     event.preventDefault();
 
-    // Call editStressor() for PUT request.
-    editStressor(stressorId);
+    /* Call displayEditStressorForm() to display a form and
+    allow the user to change field values */
+    displayEditStressorForm(oneStressor);
   });
 
 }
