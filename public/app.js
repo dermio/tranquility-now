@@ -45,9 +45,14 @@ function displayStressorChart(oneStressor) {
   $(".js-results").html(htmlString);
 
   /* Need event listeners for navigation bar
-  1. return to dashboard
+  1. return to dashboard, call displayDashBoard()
   2. Edit stressor
   3. Delete stressor */
+
+  $(".return-dashboard-btn").on("click", function (event) {
+    event.preventDefault();
+    displayDashBoard();
+  });
 
 }
 
