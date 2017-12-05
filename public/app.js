@@ -30,6 +30,35 @@ function displayEditStressorForm(oneStressor) {
   console.log("displayEditStressorForm() was called");
   console.log(oneStressor);
 
+  let htmlString =
+    `<form action="/stressor/${oneStressor.id}" method="put" role="form" class="edit-stressor-form">
+      <fieldset>
+        <legend>Edit Desired Stressor fields</legend>
+
+        <label for="stress">Stress</label>
+        <input type="text" name="stress" id="stress" required>
+
+        <label for="activity">Relaxation Activity</label>
+        <input type="text" name="activity" id="activity" required>
+
+        <label for="duration">Duration in min</label>
+        <input type="number" name="duration" id="duration" required>
+
+        <label for="preHR">Pre Heart Rate</label>
+        <input type="number" name="preHR" id="preHR" required>
+
+        <label for="postHR">Post Heart Rate</label>
+        <input type="number" name="postHR" id="postHR" required>
+
+        <button type="submit" class="submit-stressor-btn">
+          Submit new Stressor
+        </button>
+      </fieldset>
+    </form>`;
+
+  // Render the form to edit (PUT) stressor
+  $(".js-results").html(htmlString);
+
 }
 
 function displayStressorChart(oneStressor) {
@@ -239,7 +268,7 @@ function displayDashBoard() {
   /* First populate the htmlString with the navigation bar HTML
   that appears at the top of the user's dashboard */
   let htmlString =
-    `<nav class="navBarDash" role="navigation">
+    `<nav class="navbar-dashboard" role="navigation">
       <a href="#" class="create-stressor-btn">Create new Stressor</a>
       <a href="#" class="logout-btn">Logout</a>
     </nav>`;
