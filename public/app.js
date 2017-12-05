@@ -58,13 +58,20 @@ function displayStressorChart(oneStressor) {
 
 function getStressorById(uniqueId) {
   /*
-  1. Event listener, Click the title, gets the ID and triggers GET req by Id
-  2. AJAX request, GET method using id
-  3. On success, call displayStressorChart(resData) with res data
+  1. Using the stressor's id, perform GET request by id.
+  2. On success, call displayStressorChart(resData) with res data
   */
   console.log("getStressorById() was called");
   console.log(uniqueId);
 
+  $.ajax({
+    method: "GET",
+    url: "/stressors/" + uniqueId,
+    dataType: "json",
+    success: function (resData) {
+      console.log("[[CLIENT-SIDE]]", resData);
+    }
+  });
 }
 
 function createNewStressor(dataFromForm) {
@@ -248,10 +255,12 @@ function displayDashBoard() {
     displayHomeScreen();
   });
 
-  /* Listen for button or stressor name click to grab by Id
-  for one stressor. Then call getStressorById() with Id argument */
+  /* Listen for button or stressor name click to grab Id
+  of single stressor. */
   $(".stressor-name").on("click", function (event) {
     let stressorId = $(this).parent().attr("id");
+
+    // Call getStressorById() with Id argument.
     getStressorById(stressorId);
   });
 
