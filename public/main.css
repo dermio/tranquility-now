@@ -32,3 +32,8 @@ input {
 fieldset {
   border: none;
 }
+
+/********** Edit Stressor Form **********/
+.current-val {
+  color: red;
+}
