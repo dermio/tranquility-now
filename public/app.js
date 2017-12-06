@@ -35,19 +35,24 @@ function displayEditStressorForm(oneStressor) {
       <fieldset>
         <legend>Edit Desired Stressor fields</legend>
 
-        <label for="stress">Stress</label>
+        <label for="stress">Stress:</label>
+        <span class="current-val">${oneStressor.stress}</span>
         <input type="text" name="stress" id="stress">
 
-        <label for="activity">Relaxation Activity</label>
+        <label for="activity">Relaxation Activity:</label>
+        <span class="current-val">${oneStressor.activity}</span>
         <input type="text" name="activity" id="activity">
 
-        <label for="duration">Duration in min</label>
+        <label for="duration">Duration in min:</label>
+        <span class="current-val">${oneStressor.duration}</span>
         <input type="number" name="duration" id="duration">
 
-        <label for="preHR">Pre Heart Rate</label>
+        <label for="preHR">Pre Heart Rate:</label>
+        <span class="current-val">${oneStressor.preHeartRate}</span>
         <input type="number" name="preHR" id="preHR">
 
-        <label for="postHR">Post Heart Rate</label>
+        <label for="postHR">Post Heart Rate:</label>
+        <span class="current-val">${oneStressor.postHeartRate}</span>
         <input type="number" name="postHR" id="postHR">
 
         <button type="submit" class="submit-stressor-btn">
