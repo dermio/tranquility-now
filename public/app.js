@@ -33,7 +33,7 @@ function displayEditStressorForm(oneStressor) {
   let htmlString =
     `<form action="/stressor/${oneStressor.id}" method="put" role="form" class="edit-stressor-form">
       <fieldset>
-        <legend>Edit Desired Stressor fields</legend>
+        <legend>Update Desired Stressor fields</legend>
 
         <label for="stress">Stress:</label>
         <span class="current-val">${oneStressor.stress}</span>
@@ -110,7 +110,7 @@ function displayStressorChart(oneStressor) {
   let htmlString =
     `<nav class="navbar-stressor-chart" role="navigation">
       <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
-      <a href="#" class="edit-stressor-btn">Edit this Stressor</a>
+      <a href="#" class="edit-stressor-btn">Update this Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
     </nav>
 
