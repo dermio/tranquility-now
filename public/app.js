@@ -59,6 +59,36 @@ function displayEditStressorForm(oneStressor) {
   // Render the form to edit (PUT) stressor
   $(".js-results").html(htmlString);
 
+  // Listen for submission on Form to edit stressor, PUT request
+  $(".edit-stressor-form").on("submit", function (event) {
+    event.preventDefault();
+    console.log("Edit existing stressor, next Function call for Put request");
+
+    let updated = {};
+    let formUserData = {
+      id: oneStressor.id, // id is needed for PUT request
+      stress: $(this).find("#stress").val(),
+      activity: $(this).find("#activity").val(),
+      duration: $(this).find("#duration").val(),
+      preHeartRate: $(this).find("#preHR").val(),
+      postHeartRate: $(this).find("#postHR").val()
+    };
+
+    /* I removed the `required` attribute for input fields to give
+    the user the choice of what parts of the stressor to update.
+    PROBLEM: What if the user wants an empty field?
+    Only the Key-Value pairs in request.body should be submitted
+    for a PUT request */
+    for (key in formUserData) {
+      if (formUserData[key]) {
+        updated[key] = formUserData[key];
+      }
+    }
+
+    console.log(formUserData);
+    console.log(updated);
+  });
+
 }
 
 function displayStressorChart(oneStressor) {
