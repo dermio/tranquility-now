@@ -56,7 +56,7 @@ function displayEditStressorForm(oneStressor) {
         <input type="number" name="postHR" id="postHR">
 
         <button type="submit" class="submit-stressor-btn">
-          Submit new Stressor
+          Submit to Update Stressor
         </button>
       </fieldset>
     </form>`;
@@ -69,7 +69,7 @@ function displayEditStressorForm(oneStressor) {
     event.preventDefault();
     console.log("Edit existing stressor, next Function call for Put request");
 
-    let updated = {};
+    let updatedData = {};
     let formUserData = {
       id: oneStressor.id, // id is needed for PUT request
       stress: $(this).find("#stress").val(),
@@ -90,8 +90,8 @@ function displayEditStressorForm(oneStressor) {
       }
     }
 
-    console.log(formUserData);
-    console.log(updated);
+    console.log("[[FORM-USER-DATA]]", formUserData);
+    console.log("[[UPDATED-DATA]]",  updatedData);
   });
 
 }
