@@ -329,12 +329,24 @@ function displayDashBoard() {
     // Next populate the htmlString with stressor data
     htmlString +=
       `<div class="js-single-result" id="${stressorsData[i].id}">
-        <p class="stressor-name dash-para">${stressorsData[i].stress}</p>
-        <p class="dash-para">${stressorsData[i].activity}</p>
-        <p class="dash-para">${stressorsData[i].id}</p>
-        <p class="dash-para">${stressorsData[i].duration}</p>
-        <p class="dash-para">${stressorsData[i].preHeartRate}</p>
-        <p class="dash-para">${stressorsData[i].postHeartRate}</p>
+        <p class="stressor-name dash-para">
+          <span>Stress: </span>${stressorsData[i].stress}
+        </p>
+        <p class="dash-para">
+          <span>Relaxation Activity: </span>${stressorsData[i].activity}
+        </p>
+        <p class="dash-para">
+          <span>Duration in min: </span>${stressorsData[i].id}
+        </p>
+        <p class="dash-para">
+          <span>Duration in min: </span>${stressorsData[i].duration}
+        </p>
+        <p class="dash-para">
+          <span>Pre Heart Rate: </span>${stressorsData[i].preHeartRate}
+        </p>
+        <p class="dash-para">
+          <span>Post Heart Rate: </span>${stressorsData[i].postHeartRate}
+        </p>
       </div>`;
   }
 
