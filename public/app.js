@@ -84,9 +84,21 @@ function displayEditStressorForm(oneStressor) {
     PROBLEM: What if the user wants an empty field?
     Only the Key-Value pairs in request.body should be submitted
     for a PUT request */
+
+    /* The user has the option to update none, all, or some
+    of the fields values in the stressor. The current stressor
+    object is passed to the edit stressor function. An updatedData
+    object will be used in the PUT request.
+
+    /* If the user did NOT enter a new value in the form, the value
+    of the form is an empty string "", which is a `falsy` value.
+    Add the the current field from the stressor object to updatedData.
+    If the user entered a new value, use that value in updatedData. */
     for (key in formUserData) {
-      if (formUserData[key]) {
-        updated[key] = formUserData[key];
+      if (!formUserData[key]) { // Empty value, use current stressor value
+        updatedData[key] = oneStressor[key];
+      } else { // Entered new value, use this value
+        updatedData[key] = formUserData[key];
       }
     }
 
