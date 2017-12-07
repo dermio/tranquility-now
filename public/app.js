@@ -9,13 +9,20 @@ function deleteStressor() {
 
 }
 
-function editStressor(uniqueId) {
+function editStressor(updatedStressor) {
   /* From the Dashboard, Click on a stressor
   1. Edit Stressor data (PUT)
   2. After PUT request modifies data entry in DB,
     refresh to return to Dashboard. */
+
+  /* The updatedStressor object from the edit stressor form
+  is passed as an argument. 
+  1. JSON.stringify the updatedStressor object
+  2. Make the PUT request
+  3. After PUT request, show the updated Data or Chart
+  4. Create navbar to return to dashboard */
   console.log("editStressor() was called");
-  console.log(uniqueId);
+  console.log(updatedStressor);
 }
 
 function displayEditStressorForm(oneStressor) {
@@ -104,6 +111,9 @@ function displayEditStressorForm(oneStressor) {
 
     console.log("[[FORM-USER-DATA]]", formUserData);
     console.log("[[UPDATED-DATA]]",  updatedData);
+
+    // Call editStressor with updatedData obj to make PUT request
+    editStressor(updatedData);
   });
 
 }
