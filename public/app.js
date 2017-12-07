@@ -178,15 +178,15 @@ function createNewStressor(dataFromForm) {
   2. Keys must be the same as in Model, values come from the form
   3. use jQuery to grab the data from form and put in JS object
   4. JSON.stringify(Javascript data object)
+
+  The JSON.stringify() method converts a JS value (in this case
+  the dataFromForm object) to a JSON string.
   */
 
-  /* When createNewStressor() is called, the argument referenced
-  by dataFromForm has already been JSON.stringified.
-  Pass dataFromForm to $.ajax() to make POST request. */
   $.ajax({
     method: "POST",
     url: "/stressors",
-    data: dataFromForm, // Value already stringified.
+    data: JSON.stringify(dataFromForm), // Need to stringify object
     dataType: "json",
     contentType: "application/json",
     success: function (resData) {
@@ -266,8 +266,6 @@ function displayCreateNewStressorForm() {
       preHeartRate: this.preHR.value,
       postHeartRate: this.postHR.value
     };
-
-    let jsonStringRLynch = JSON.stringify(formUserDataRLynch);
     */
 
     let formUserData = {
@@ -278,11 +276,6 @@ function displayCreateNewStressorForm() {
       postHeartRate: $(this).find("#postHR").val()
     };
 
-    let jsonStringifiedFormUserData = JSON.stringify(formUserData);
-
-    // console.log(jsonStringRLynch);
-    console.log(jsonStringifiedFormUserData);
-
     // console.log(this);
     // console.log($(this));
 
@@ -291,7 +284,7 @@ function displayCreateNewStressorForm() {
     For now, return the data from the DB and give the message link
     to return to the Dashboard. */
 
-    createNewStressor(jsonStringifiedFormUserData);
+    createNewStressor(formUserData);
 
   });
 }
