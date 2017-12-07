@@ -137,12 +137,30 @@ function displayStressorChart(oneStressor) {
     </nav>
 
     <div class="js-single-result" id="${oneStressor.id}">
-      <p class="stressor-name">${oneStressor.stress}</p>
-      <p>${oneStressor.activity}</p>
-      <p>${oneStressor.id}</p>
-      <p>${oneStressor.duration}</p>
-      <p>${oneStressor.preHeartRate}</p>
-      <p>${oneStressor.postHeartRate}</p>
+      <p class="stressor-name chart-para">
+        <span class="dash-chart">Stress:</span>
+        ${oneStressor.stress}
+      </p>
+      <p class="chart-para">
+        <span class="dash-chart">Relaxation Activity:</span>
+        ${oneStressor.activity}
+      </p>
+      <p class="chart-para">
+        <span class="dash-chart">Id:</span>
+        ${oneStressor.id}
+      </p>
+      <p class="chart-para">
+        <span class="dash-chart">Duration in min:</span>
+        ${oneStressor.duration}
+      </p>
+      <p class="chart-para">
+        <span class="dash-chart">Pre Heart Rate:</span>
+        ${oneStressor.preHeartRate}
+      </p>
+      <p class="chart-para">
+        <span class="dash-chart">Post Heart Rate:</span>
+        ${oneStressor.postHeartRate}
+      </p>
     </div>`;
 
 
@@ -338,7 +356,7 @@ function displayDashBoard() {
           ${stressorsData[i].activity}
         </p>
         <p class="dash-para">
-          <span class="dash-span">Duration in min:</span>
+          <span class="dash-span">Id:</span>
           ${stressorsData[i].id}
         </p>
         <p class="dash-para">
