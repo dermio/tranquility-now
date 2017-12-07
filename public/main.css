@@ -4,7 +4,6 @@
 
 /********** Dashboard **********/
 .stressor-name {
-  color: black;
   font-size: 20px;
 }
 
@@ -15,6 +14,10 @@
 
 .dash-para {
   color: blue;
+}
+
+.dash-span {
+  color: black;
 }
 
 /********** Navigation Bars **********/
