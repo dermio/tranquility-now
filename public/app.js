@@ -8,6 +8,18 @@ function deleteStressor(oneStressor) {
   3. Return to the dashboard
   */
   console.log("oneStressor was called", oneStressor);
+
+  $.ajax({
+    method: "DELETE",
+    url: "/stressors/" + oneStressor.id,
+    success: function (resData) {
+      console.log("[[RESPONSE FROM SERVER, DELETE SUCCESSFUL]]");
+      console.log(resData);
+
+      // Call getAllStressors()
+      setTimeout(getAllStressors, 250);
+    }
+  });
 }
 
 function editStressor(updatedFormData) {
