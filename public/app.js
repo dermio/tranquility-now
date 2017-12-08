@@ -1,12 +1,13 @@
 const STATE_DATA = {}; // data from database stored here
 
 
-function deleteStressor() {
-  /* From the Dashboard, Click on a stressor
-  1. Delete Stressor data (DELETE)
-  2. After DELETE request modifies data entry in DB,
-    refresh to return to Dashboard. */
-
+function deleteStressor(oneStressor) {
+  /*
+  1. Make DELETE request to server.
+  2. Delete the stressor data on the client side.
+  3. Return to the dashboard
+  */
+  console.log("oneStressor was called", oneStressor);
 }
 
 function editStressor(updatedFormData) {
@@ -211,7 +212,6 @@ function displayStressorChart(oneStressor) {
   $(".delete-stressor-btn").on("click", function (event) {
     event.preventDefault();
     console.log("clicked delete stressor button");
-    console.log(this);
 
     // Call deleteStressor() to delete this stressor
     deleteStressor(oneStressor);
