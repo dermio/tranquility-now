@@ -208,6 +208,15 @@ function displayStressorChart(oneStressor) {
     displayEditStressorForm(oneStressor);
   });
 
+  $(".delete-stressor-btn").on("click", function (event) {
+    event.preventDefault();
+    console.log("clicked delete stressor button");
+    console.log(this);
+
+    // Call deleteStressor() to delete this stressor
+    deleteStressor(oneStressor);
+  });
+
 }
 
 function getStressorById(uniqueId) {
