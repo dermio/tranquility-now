@@ -9,12 +9,7 @@ function deleteStressor() {
 
 }
 
-function editStressor(updatedStressor) {
-  /* From the Dashboard, Click on a stressor
-  1. Edit Stressor data (PUT)
-  2. After PUT request modifies data entry in DB,
-    refresh to return to Dashboard. */
-
+function editStressor(updatedFormData) {
   /* The updatedStressor object from the edit stressor form
   is passed as an argument. 
   1. JSON.stringify the updatedStressor object
@@ -22,7 +17,24 @@ function editStressor(updatedStressor) {
   3. After PUT request, show the updated Data or Chart
   4. Create navbar to return to dashboard */
   console.log("editStressor() was called");
-  console.log(updatedStressor);
+  console.log(updatedFormData);
+
+  /* dataType: "json" is not needed because the server is NOT
+  sending back data to the client. Check server.js, line 91.
+  The only response from the server is a status code 204. */
+  $.ajax({
+    method: "PUT",
+    url: "/stressors/" + updatedFormData.id,
+    data: JSON.stringify(updatedFormData),
+    contentType: "application/json",
+    success: function (resData) {
+      console.log("[[RESPONSE FROM SERVER, PUT SUCCESSFUL]]", resData);
+
+      // call displayStressorChart() with updatedFormData stressor
+      displayStressorChart(updatedFormData);
+    }
+  });
+
 }
 
 function displayEditStressorForm(oneStressor) {
@@ -352,7 +364,7 @@ function displayDashBoard() {
           ${stressorsData[i].stress}
         </p>
         <p class="dash-para">
-          <span class="dash-span">Relaxation Activity: </span>
+          <span class="dash-span">Relaxation Activity:</span>
           ${stressorsData[i].activity}
         </p>
         <p class="dash-para">
