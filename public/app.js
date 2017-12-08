@@ -32,6 +32,16 @@ function editStressor(updatedFormData) {
       /* resData is `undefined` because the server does NOT send data
       back to the client */
 
+      /* Need to update the STATE_DATA on the client side,
+      because the PUT request does NOT return data. */
+      console.log("[[CLIENT-SIDE DATA]]", STATE_DATA.data);
+      STATE_DATA.data.forEach(function (stressor, index) {
+        if (stressor.id === updatedFormData.id) {
+          console.log("[[MATCHING-IDS]]", updatedFormData.id);
+          STATE_DATA.data[index] = updatedFormData;
+        }
+      });
+
       // call displayStressorChart() with updatedFormData stressor
       displayStressorChart(updatedFormData);
     }
