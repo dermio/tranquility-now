@@ -29,6 +29,8 @@ function editStressor(updatedFormData) {
     contentType: "application/json",
     success: function (resData) {
       console.log("[[RESPONSE FROM SERVER, PUT SUCCESSFUL]]", resData);
+      /* resData is `undefined` because the server does NOT send data
+      back to the client */
 
       // call displayStressorChart() with updatedFormData stressor
       displayStressorChart(updatedFormData);
@@ -131,7 +133,7 @@ function displayEditStressorForm(oneStressor) {
 }
 
 function displayStressorChart(oneStressor) {
-  /* Will display one stressor as chart, for GET by id or POST.
+  /* Will display one stressor as chart, for GET by id, POST, and PUT.
   1. Need nav bar to go back to user Dashboard
   2. Dashboard will include NEW entry for created Stressor */
   console.log("displayStressorChart() was called, for GET by id or POST");
