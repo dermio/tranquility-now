@@ -1,6 +1,5 @@
 const express = require("express");
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const {PORT, DATABASE_URL} = require("./config");
@@ -10,7 +9,6 @@ const stressorsRouter = require("./stressorsRouter");
 const app = express();
 
 app.use(morgan("common"));
-app.use(bodyParser.json());
 app.use(express.static("public"));
 
 /* Route requests that come to the `/stressors` endpoint
