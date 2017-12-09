@@ -1,11 +1,40 @@
 const STATE_DATA = {}; // data from database stored here
 
 
-function deleteStressor() {
-  /* From the Dashboard, Click on a stressor
-  1. Delete Stressor data (DELETE)
-  2. After DELETE request modifies data entry in DB,
-    refresh to return to Dashboard. */
+function deleteStressor(oneStressor) {
+  /*
+  1. Make DELETE request to server.
+  2. Delete the stressor data on the client side.
+  3. Return to the dashboard
+  */
+  console.log("oneStressor was called", oneStressor);
+
+  $.ajax({
+    method: "DELETE",
+    url: "/stressors/" + oneStressor.id,
+    success: function (resData) {
+      console.log("[[RESPONSE FROM SERVER, DELETE SUCCESSFUL]]");
+      console.log(resData);
+
+      // Call getAllStressors()
+      let htmlString =
+      `<p>Successfully deleted Stress "${oneStressor.stress}" with Id "${oneStressor.id}".</p>
+      <p>Click button to return to Dashboard.</p>
+      <button class="return-dashboard-btn">Return to Dashboard</button>`;
+
+    // Render the page to inform stressor was deleted.
+    $(".js-results").html(htmlString);
+    }
+  });
+
+  // Event listener click button to return to Dashboard
+  $(".js-results").on("click", ".return-dashboard-btn",function (event) {
+    event.preventDefault();
+    console.log("[[CLICKED BUTTON, RETURN TO DASHBOARD FROM DELETE]]");
+
+    // Call getAllStressors(), which calls displayDashBoard();
+    getAllStressors();
+  });
 
 }
 
@@ -206,6 +235,14 @@ function displayStressorChart(oneStressor) {
     /* Call displayEditStressorForm() to display a form and
     allow the user to change field values */
     displayEditStressorForm(oneStressor);
+  });
+
+  $(".delete-stressor-btn").on("click", function (event) {
+    event.preventDefault();
+    console.log("clicked delete stressor button");
+
+    // Call deleteStressor() to delete this stressor
+    deleteStressor(oneStressor);
   });
 
 }
