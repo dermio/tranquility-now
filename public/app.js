@@ -300,9 +300,6 @@ function createNewStressor(dataFromForm) {
       STATE_DATA.data.push(resData);
       console.log("STATE_DATA docs length: ", STATE_DATA.data.length);
 
-      let resDataId = resData.id;
-      console.log(resDataId);
-
       displayStressorChart(resData);
 
       // Marius Banea says after POST request make a GET request??
