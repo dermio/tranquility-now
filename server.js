@@ -5,12 +5,18 @@ const mongoose = require("mongoose");
 
 const {PORT, DATABASE_URL} = require("./config");
 const {Stressor} = require("./models");
+const stressorsRouter = require("./stressorsRouter");
 
 const app = express();
 
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
+/* Route requests that come to the `/stressors` endpoint
+to the Express router instance in the stressorsRouter module. */
+app.use("/stressors", stressorsRouter);
+
 mongoose.Promise = global.Promise;
 
 
