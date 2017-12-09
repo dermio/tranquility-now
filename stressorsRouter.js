@@ -3,6 +3,9 @@ const router = express.Router();
 
 // Moved `bodyparser` and `bodyParser.json` inside the router module
 const bodyParser = require("body-parser");
+// const jsonParser = bodyParser.json();
+const {Stressor} = require("./models");
+
 router.use(bodyParser.json());
 
 /*
@@ -13,3 +16,4 @@ In this case I don't use a bodyParser constant, because I'm using
 router.use(bodyParser.json()) to make bodyParser available to all
 route Methods.
 */
+
