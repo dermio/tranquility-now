@@ -3,10 +3,11 @@ const router = express.Router();
 
 // Moved `bodyparser` and `bodyParser.json` inside the router module
 const bodyParser = require("body-parser");
-// const jsonParser = bodyParser.json();
+const jsonParser = bodyParser.json();
+// router.use(bodyParser.json());
+
 const {Stressor} = require("./models");
 
-router.use(bodyParser.json());
 
 /*
 An alternaive is to use: const jsonParser = bodyParser.json().
