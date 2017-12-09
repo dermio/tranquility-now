@@ -26,6 +26,16 @@ function deleteStressor(oneStressor) {
     $(".js-results").html(htmlString);
     }
   });
+
+  // Event listener click button to return to Dashboard
+  $(".js-results").on("click", ".return-dashboard-btn",function (event) {
+    event.preventDefault();
+    console.log("[[CLICKED BUTTON, RETURN TO DASHBOARD FROM DELETE]]");
+
+    // Call getAllStressors(), which calls displayDashBoard();
+    getAllStressors();
+  });
+
 }
 
 function editStressor(updatedFormData) {
