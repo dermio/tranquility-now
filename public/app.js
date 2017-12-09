@@ -17,7 +17,13 @@ function deleteStressor(oneStressor) {
       console.log(resData);
 
       // Call getAllStressors()
-      setTimeout(getAllStressors, 250);
+      let htmlString =
+      `<p>Successfully deleted Stress "${oneStressor.stress}" with Id "${oneStressor.id}".</p>
+      <p>Click button to return to Dashboard.</p>
+      <button class="return-dashboard-btn">Return to Dashboard</button>`;
+
+    // Render the page to inform stressor was deleted.
+    $(".js-results").html(htmlString);
     }
   });
 }
