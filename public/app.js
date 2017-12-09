@@ -15,8 +15,10 @@ function deleteStressor(oneStressor) {
     success: function (resData) {
       console.log("[[RESPONSE FROM SERVER, DELETE SUCCESSFUL]]");
       console.log(resData);
+      /* resData is `undefined` because the server does NOT send data
+      back to the client */
 
-      // Call getAllStressors()
+      // Show the user a message the DELETE request was successful
       let htmlString =
       `<p>Successfully deleted Stress "${oneStressor.stress}" with Id "${oneStressor.id}".</p>
       <p>Click button to return to Dashboard.</p>
@@ -28,7 +30,7 @@ function deleteStressor(oneStressor) {
   });
 
   // Event listener click button to return to Dashboard
-  $(".js-results").on("click", ".return-dashboard-btn",function (event) {
+  $(".js-results").on("click", ".return-dashboard-btn", function (event) {
     event.preventDefault();
     console.log("[[CLICKED BUTTON, RETURN TO DASHBOARD FROM DELETE]]");
 
