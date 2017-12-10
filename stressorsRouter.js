@@ -19,8 +19,8 @@ route Methods.
 */
 
 // GET route
-//app.get("/", function (req, res) {
-app.get("/", function (req, res) {
+//router.get("/", function (req, res) {
+router.get("/", function (req, res) {
   // console.log(res); // Why does the res look diff than log in Chai res?
   // res.send("GET request"); // this code works
   Stressor
@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
     });
 });
 
-app.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   Stressor
     .findById(req.params.id)
     .then(stressor => res.json(stressor.apiRepr()))
@@ -45,7 +45,7 @@ app.get("/:id", (req, res) => {
     });
 });
 
-app.post("/", (req, res) => {
+router.post("/", (req, res) => {
   let requiredFields = ["stress", "activity", "duration",
     "preHeartRate", "postHeartRate"];
 
@@ -73,7 +73,7 @@ app.post("/", (req, res) => {
     });
 });
 
-app.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
       error: "Request path id and request body id values must match"
@@ -98,7 +98,7 @@ app.put("/:id", (req, res) => {
     .catch(err => res.status(500).json({message: "Something went wrong"}));
 });
 
-app.delete("/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   Stressor
     .findByIdAndRemove(req.params.id)
     .then(() => {
