@@ -10,12 +10,18 @@ const {Stressor} = require("./models");
 
 
 /*
-An alternaive is to use: const jsonParser = bodyParser.json().
-Then I'd pass jsonParser as the middle arg to router.METHOD(PATH, HANDLER).
-Example: router.post("/something", jsonParser, (req, res) => {...}).
-In this case I don't use a bodyParser constant, because I'm using
-router.use(bodyParser.json()) to make bodyParser available to all
-route Methods.
+Use the Middleware function `body-parser` and call it with
+`.json` to parse JSON from the request body.
+Then pass this Middleware to only the POST and PUT requests.
+JSON is sent as data from the client in POST and PUT requests.
+
+Example: route to POST and PUT
+const jsonParser = bodyParser.json();
+router.post("/endpoint/:id", jsonParser, (req, res) => {...}).
+router.post("/endpoint/:id", jsonParser, (req, res) => {...}).
+
+Using: router.use(bodyParser.json() is made availabe to
+all requests methods in the router.
 */
 
 // GET route
