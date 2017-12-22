@@ -2,6 +2,20 @@
   border: 1px solid black;
 }
 
+
+/********** General styling **********/
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: slategray;
+  margin: 0;
+}
+
+/********** Log In or Home Screen **********/
+
+
 /********** Dashboard **********/
 .stressor-name {
   font-size: 20px;
