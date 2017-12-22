@@ -9,7 +9,10 @@ html, body {
 }
 
 body {
-  background-color: slategray;
+  background-image: url("https://images.unsplash.com/photo-1496629062893-b0f566065d44?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
 }
 
