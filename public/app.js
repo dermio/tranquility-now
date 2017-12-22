@@ -358,16 +358,6 @@ function displayCreateNewStressorForm() {
     The form user data should be a JS object.
     Use JSON.stringify() */
 
-    /* Explain later Ryan solution
-    let formUserDataRLynch = {
-      stress: this.stress.value,
-      activity: this.activity.value,
-      duration: this.duration.value,
-      preHeartRate: this.preHR.value,
-      postHeartRate: this.postHR.value
-    };
-    */
-
     let formUserData = {
       stress: $(this).find("#stress").val(),
       activity: $(this).find("#activity").val(),
@@ -532,53 +522,8 @@ function displayHomeScreen() {
   });
 }
 
-
-/* 
-The final Node app will have function calls in roughly this order:
-
-Note: the homeScreen() will either create a new user, or login user
-
-handler() => homeScreen() => getAllStressors() => 1. getOneStressorById()
-                                               => 2. postNewStressor()
-*/
-
 function startApp() {
   displayHomeScreen();
 }
 
 $(startApp);
-
-
-/////////////////////////////
-
-/*
-
-Note, these steps occur after the user has logged into their Dashboard
-
-1. press button (or load dashboard), get all stressors and de-stressing activities for user. GET request
-
-2. press button or link, get single unique stressor and de-stressing activity for user. GET requesty by id
-
-2b. Also POST data with a form, then display
-
-3. render the results
-
-9. Do this later, will make modular later
-
-Eventually move HTTP routes into a separate router module
-use express.Router
-
-example:
-var express = require('express')
-var router = express.Router()
-
-// middleware that is specific to this router
-router.use(function timeLog (req, res, next) {
-  console.log('Time: ', Date.now())
-  next()
-})
-
-U1, Lesson 4, Section 6, First Glitch recipesRouter.js and 
-shoppingListRouter.js
-
-*/

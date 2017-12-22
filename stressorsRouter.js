@@ -20,7 +20,7 @@ const jsonParser = bodyParser.json();
 router.post("/endpoint/:id", jsonParser, (req, res) => {...}).
 router.post("/endpoint/:id", jsonParser, (req, res) => {...}).
 
-Using: router.use(bodyParser.json() is made availabe to
+Using: router.use(bodyParser.json()) is made availabe to
 all requests methods in the router.
 */
 
