@@ -37,7 +37,14 @@ body {
 .app-name {
   margin-top: 0;
   font-family: "Fjalla One", sans-serif;
+  font-size: 32px;
   letter-spacing: 5px;
+}
+
+.app-desc {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  letter-spacing: .5 px;
 }
 
 /********** Dashboard **********/

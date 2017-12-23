@@ -502,7 +502,7 @@ function displayHomeScreen() {
   let htmlString =
     `<div class="col-6 login-div">
       <h2 class="app-name">Tranquility Now</h2>
-      <p>Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
+      <p class="app-desc">Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
     </div>
     <div class="col-6 login-div">
       <form action="/login" method="post" role="form" class="login-form">
