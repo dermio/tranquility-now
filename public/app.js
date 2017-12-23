@@ -500,7 +500,7 @@ function displayHomeScreen() {
   logging in or creating a new user. */
 
   let htmlString =
-    `<form action="/login" method="post" role="form">
+    `<form action="/login" method="post" role="form" class="login-form">
       <fieldset>
         <legend>Mock Login</legend>
 
