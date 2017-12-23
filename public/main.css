@@ -16,6 +16,11 @@ body {
   margin: 0;
 }
 
+.main {
+  border: 1px solid black;
+  padding-top: 20px;
+}
+
 /********** Log In or Home Screen **********/
 .login-div {
   border: 1px solid black;
