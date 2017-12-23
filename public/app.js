@@ -500,18 +500,24 @@ function displayHomeScreen() {
   logging in or creating a new user. */
 
   let htmlString =
-    `<form action="/login" method="post" role="form" class="login-form">
-      <fieldset>
-        <legend>Mock Login</legend>
+    `<div class="col-6 login-div">
+      <h2>Tranquility Now</h2>
+      <p>Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
+    </div>
+    <div class="col-6 login-div">
+      <form action="/login" method="post" role="form" class="login-form">
+        <fieldset>
+          <legend>Mock Login</legend>
 
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
 
-        <button class="home-screen-btn">Continue to Dashboard</button>
-      </fieldset>
-    </form>`;
+          <button class="home-screen-btn">Continue to Dashboard</button>
+        </fieldset>
+      </form>
+    </div>`;
 
 
   $(".js-results").html(htmlString);
