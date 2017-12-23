@@ -17,10 +17,19 @@ body {
 }
 
 /********** Log In or Home Screen **********/
+.login-div {
+  border: 1px solid black;
+  padding: 30px 30px 0;
+}
+
 .login-form {
   border: 1px solid black;
-  margin: 50px auto 0;
-  max-width: 400px
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.app-name {
+  margin-top: 0;
 }
 
 /********** Dashboard **********/
