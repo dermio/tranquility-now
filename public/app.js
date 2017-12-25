@@ -120,6 +120,10 @@ function displayEditStressorForm(oneStressor) {
         <button type="submit" class="submit-stressor-btn">
           Submit to Update Stressor
         </button>
+
+        <button type="button" class="cancel-edit-stressor-btn">
+          Cancel and back to dashboard
+        </button>
       </fieldset>
     </form>`;
 
@@ -171,6 +175,11 @@ function displayEditStressorForm(oneStressor) {
     editStressor(updatedData);
   });
 
+  // Cancel edit stressor, return to Dashboard
+  $(".cancel-edit-stressor-btn").on("click", function (event) {
+    event.preventDefault();
+    displayDashBoard();
+  });
 }
 
 function displayStressorChart(oneStressor) {
