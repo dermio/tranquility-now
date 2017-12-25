@@ -406,10 +406,6 @@ function displayDashBoard() {
           ${stressorsData[i].activity}
         </p>
         <p class="dash-para">
-          <span class="dash-span">Id:</span>
-          ${stressorsData[i].id}
-        </p>
-        <p class="dash-para">
           <span class="dash-span">Duration in min:</span>
           ${stressorsData[i].duration}
         </p>
