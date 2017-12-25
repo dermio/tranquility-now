@@ -201,10 +201,6 @@ function displayStressorChart(oneStressor) {
         ${oneStressor.activity}
       </p>
       <p class="chart-para">
-        <span class="dash-chart">Id:</span>
-        ${oneStressor.id}
-      </p>
-      <p class="chart-para">
         <span class="dash-chart">Duration in min:</span>
         ${oneStressor.duration}
       </p>
