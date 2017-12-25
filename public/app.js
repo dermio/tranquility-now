@@ -351,7 +351,7 @@ function displayCreateNewStressorForm() {
   // Listen for submission on Form to create new stressor, POST request
   $(".create-stressor-form").on("submit", function (event) {
     event.preventDefault();
-    console.log("submit new stressor, next Function call for Post request");
+    //console.log("submit new stressor, next Function call for Post request");
 
     /* Grab user data from Form fields, pass as argument
     to createNewStressor to make POST request
@@ -367,7 +367,7 @@ function displayCreateNewStressorForm() {
     };
 
     // console.log(this);
-    // console.log($(this));
+    // `this` is the <form> element when the submit button is clicked
 
     /* Next need to make POST request to database.
     If successful, the data sent to DB will be displayed as a chart.
@@ -483,12 +483,6 @@ function getAllStressors() {
 }
 
 function displayHomeScreen() {
-  /*
-  let htmlString =
-    `<p>Hello World rendered by displayHomeScreen()</p>
-    <p>This page shows the Login and/or Create new user page</p>
-    <button class="home-screen-btn">Login/Create user => GET all stressors => display Dashboard</button>`; */
-
   /* This is the first page loaded to the client.
   Will see a form to login with username and password.
 
