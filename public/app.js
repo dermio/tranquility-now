@@ -338,6 +338,10 @@ function displayCreateNewStressorForm() {
         <button type="submit" class="submit-stressor-btn">
           Submit new Stressor
         </button>
+
+        <button type="button" class="cancel-create-stressor-btn">
+          Cancel and back to dashboard
+        </button>
       </fieldset>
     </form>`;
 
@@ -372,6 +376,12 @@ function displayCreateNewStressorForm() {
 
     createNewStressor(formUserData);
 
+  });
+
+  // Cancel create new stressor, return to Dashboard
+  $(".cancel-create-stressor-btn").on("click", function (event) {
+    event.preventDefault();
+    displayDashBoard();
   });
 }
 
