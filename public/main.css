@@ -44,7 +44,7 @@ body {
   letter-spacing: .5 px;
 }
 
-/********** Dashboard **********/
+/********** Dashboard, all cards and single card **********/
 .stressor-name {
   font-size: 20px;
   padding: 20px;
@@ -53,7 +53,7 @@ body {
   background-color: #333;
 }
 
-.stressor-name.dash-para {
+.stressor-name.dash-para, .stressor-name.chart-para {
   font-family: "Fjalla One", sans-serif;
   letter-spacing: 1px;
 }
@@ -63,7 +63,7 @@ body {
   cursor: pointer;
 }
 
-.dash-para {
+.dash-para, .chart-para {
   font-family: "Nunito", sans-serif;
 }
 
