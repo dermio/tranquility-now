@@ -198,6 +198,7 @@ function displayStressorChart(oneStressor) {
       <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
       <a href="#" class="edit-stressor-btn">Update this Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
+      <a href="#" class="display-chart-btn">Display Chart</a>
     </nav>
 
     <div class="js-single-result" id="${oneStressor.id}">
@@ -252,6 +253,13 @@ function displayStressorChart(oneStressor) {
     deleteStressor(oneStressor);
   });
 
+  $(".display-chart-btn").on("click", function (event) {
+    event.preventDefault();
+    console.log("clicked display chart button");
+
+    // Call renderChart() to display D3 chart
+    renderChart();
+  });
 }
 
 function getStressorById(uniqueId) {
@@ -538,3 +546,10 @@ function startApp() {
 }
 
 $(startApp);
+
+
+
+/***** function to render chart in D3 *****/
+function renderChart() {
+  console.log("renderChart() was called");
+}
