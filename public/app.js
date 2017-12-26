@@ -336,13 +336,13 @@ function displayCreateNewStressorForm() {
         <input type="text" name="activity" id="activity" required>
 
         <label for="duration">Duration in min</label>
-        <input type="number" name="duration" id="duration" required>
+        <input type="number" name="duration" id="duration" min="1" max="10" required>
 
         <label for="preHR">Pre Heart Rate</label>
-        <input type="number" name="preHR" id="preHR" required>
+        <input type="number" name="preHR" id="preHR" min="20" max="200" required>
 
         <label for="postHR">Post Heart Rate</label>
-        <input type="number" name="postHR" id="postHR" required>
+        <input type="number" name="postHR" id="postHR" min="20" max="200" required>
 
         <button type="submit" class="submit-stressor-btn">
           Submit new Stressor
