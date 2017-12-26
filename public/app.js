@@ -258,7 +258,7 @@ function displayStressorChart(oneStressor) {
     console.log("clicked display chart button");
 
     // Call renderChart() to display D3 chart
-    renderChart();
+    renderChart(oneStressor);
   });
 }
 
@@ -550,6 +550,7 @@ $(startApp);
 
 
 /***** function to render chart in D3 *****/
-function renderChart() {
+function renderChart(oneStressor) {
   console.log("renderChart() was called");
+  console.log(oneStressor);
 }
