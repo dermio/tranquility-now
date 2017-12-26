@@ -47,6 +47,10 @@ body {
 /********** Dashboard **********/
 .stressor-name {
   font-size: 20px;
+  padding: 20px;
+  margin-top: 0;
+  color: #fff;
+  background-color: #333;
 }
 
 .stressor-name.dash-para {
@@ -61,10 +65,6 @@ body {
 
 .dash-para {
   font-family: "Nunito", sans-serif;
-}
-
-.dash-span {
-  color: #000;
 }
 
 /********** Navigation Bars **********/
