@@ -107,15 +107,15 @@ function displayEditStressorForm(oneStressor) {
 
         <label for="duration">Duration in min:</label>
         <span class="current-val">${oneStressor.duration}</span>
-        <input type="number" name="duration" id="duration">
+        <input type="number" name="duration" id="duration" min="1" max="10">
 
         <label for="preHR">Pre Heart Rate:</label>
         <span class="current-val">${oneStressor.preHeartRate}</span>
-        <input type="number" name="preHR" id="preHR">
+        <input type="number" name="preHR" id="preHR" min="20" max="200">
 
         <label for="postHR">Post Heart Rate:</label>
         <span class="current-val">${oneStressor.postHeartRate}</span>
-        <input type="number" name="postHR" id="postHR">
+        <input type="number" name="postHR" id="postHR" min="20" max="200">
 
         <button type="submit" class="submit-stressor-btn">
           Submit to Update Stressor
