@@ -60,12 +60,11 @@ body {
 }
 
 .dash-para {
-  color: blue;
   font-family: "Nunito", sans-serif;
 }
 
 .dash-span {
-  color: black;
+  color: #000;
 }
 
 /********** Navigation Bars **********/
