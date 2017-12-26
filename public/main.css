@@ -49,8 +49,9 @@ body {
   font-size: 20px;
 }
 
-.dash-span-stressor {
+.stressor-name.dash-para {
   font-family: "Fjalla One", sans-serif;
+  letter-spacing: 1px;
 }
 
 .stressor-name:hover {
@@ -63,7 +64,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-span.dash-span {
+.dash-span {
   color: black;
 }
 
