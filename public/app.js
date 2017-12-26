@@ -413,7 +413,7 @@ function displayDashBoard() {
     htmlString +=
       `<div class="js-single-result" id="${stressorsData[i].id}">
         <p class="stressor-name dash-para">
-          <span class="dash-span">Stress:</span>
+          <span class="dash-span dash-span-stressor">Stress:</span>
           ${stressorsData[i].stress}
         </p>
         <p class="dash-para">
