@@ -202,7 +202,7 @@ function displayStressorChart(oneStressor) {
 
     <div class="js-single-result" id="${oneStressor.id}">
       <p class="stressor-name chart-para">
-        <span class="dash-chart">Stress:</span>
+        <span class="dash-chart dash-chart-stressor">Stress:</span>
         ${oneStressor.stress}
       </p>
       <p class="chart-para">
