@@ -222,6 +222,9 @@ function displayStressorChart(oneStressor) {
         <span class="dash-chart">Post Heart Rate:</span>
         ${oneStressor.postHeartRate}
       </p>
+      <div class="modal hideModal" id="myModal">
+        <svg class="chart">Modal for svg chart</svg>
+      </div>
     </div>`;
 
 
@@ -256,7 +259,6 @@ function displayStressorChart(oneStressor) {
   $(".display-chart-btn").on("click", function (event) {
     event.preventDefault();
     console.log("clicked display chart button");
-
     // Call renderChart() to display D3 chart
     renderChart(oneStressor);
   });
@@ -553,4 +555,6 @@ $(startApp);
 function renderChart(oneStressor) {
   console.log("renderChart() was called");
   console.log(oneStressor);
+
+  $(this)
 }
