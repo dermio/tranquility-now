@@ -23,6 +23,7 @@ $ npm start
 
 #### Back End
 * Node.js and npm
+* Express.js
 * MongoDB
 
 #### Testing
@@ -30,5 +31,11 @@ $ npm start
 * Chai
 * Istanbul/nyc
 
+### Photograph Attribution
+Photo by [Mario Ho](https://unsplash.com/@homarioo) on Unsplash
+
 ### Maintainers
 [@dermio](https://github.com/dermio)
+
+### License
+This project is licensed under the terms of the MIT license.
