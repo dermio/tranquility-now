@@ -515,6 +515,14 @@ function displayHomeScreen() {
   logging in or creating a new user. */
 
   let htmlString =
+    `<div class="login-div">
+      <h2 class="app-name">Tranquility Now</h2>
+      <p class="app-desc">Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
+      <button class="home-screen-btn">Show all entries</button>
+    </div>`;
+
+
+    /*
     `<div class="col-6 login-div">
       <h2 class="app-name">Tranquility Now</h2>
       <p class="app-desc">Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
@@ -532,7 +540,7 @@ function displayHomeScreen() {
           <button class="home-screen-btn">Continue to Dashboard</button>
         </fieldset>
       </form>
-    </div>`;
+    </div>`; */
 
 
   $(".js-results").html(htmlString);
@@ -558,3 +566,17 @@ function renderChart(oneStressor) {
 
   $(this)
 }
+
+
+
+/* Styling for Login Screen
+1 put max width on container div (~420px)
+2 center vertically between boats and top of page
+3 semi parent white background on the div
+  - re-arrange structure
+
+  <div>
+    <h2>Tranquility<h2>
+    <p>...</p>
+  </div>
+*/
