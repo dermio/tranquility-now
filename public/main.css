@@ -23,6 +23,7 @@ body {
   padding: 30px 30px 0;
   font-family: "Roboto", sans-serif;
   /* background: rgba(99, 99, 99, .5); optional to darken */
+  max-width: 425px; /* Remove this later with .login-form */
 }
 
 .login-form {
