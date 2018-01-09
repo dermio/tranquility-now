@@ -78,10 +78,13 @@ body {
   padding: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  background-color: #333;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
+  padding-right: 10px;
 }
 
 /********** Create Stressor Form, Edit Stressor Form **********/
