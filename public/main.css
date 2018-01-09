@@ -75,6 +75,13 @@ body {
 /********** Navigation Bars **********/
 .navbar-dashboard, .navbar-stressor-chart {
   border: 1px solid red;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }
 
 /********** Create Stressor Form, Edit Stressor Form **********/
