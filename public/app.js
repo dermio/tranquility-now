@@ -196,8 +196,8 @@ function displayStressorChart(oneStressor) {
   let htmlString =
     `<nav class="navbar-stressor-chart" role="navigation">
       <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
-      <a href="#" class="edit-stressor-btn">Update this Stressor</a>
-      <a href="#" class="delete-stressor-btn">Delete this Stressor</a>
+      <a href="#" class="edit-stressor-btn">Update Stressor</a>
+      <a href="#" class="delete-stressor-btn">Delete Stressor</a>
       <a href="#" class="display-chart-btn">Display Chart</a>
     </nav>
 
@@ -412,7 +412,7 @@ function displayDashBoard() {
   that appears at the top of the user's dashboard */
   let htmlString =
     `<nav class="navbar-dashboard" role="navigation">
-      <a href="#" class="create-stressor-btn">Create new Stressor</a>
+      <a href="#" class="create-stressor-btn">Create Stressor</a>
       <a href="#" class="logout-btn">Logout</a>
     </nav>`;
 
