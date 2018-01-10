@@ -100,6 +100,23 @@ input {
 /* Remove the fieldset default style (the border) */
 fieldset {
   border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.create-stressor-form {
+  background-color: #efefef;
+  padding: 15px;
+}
+
+.create-stressor-form label {
+  font-family: "Nunito", sans-serif;
+}
+
+legend {
+  font-size: 20px;
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 1px;
 }
 
 /********** Edit Stressor Form **********/
