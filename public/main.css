@@ -95,6 +95,10 @@ a:hover {
 /* Make sure the labels and inputs are block level elements */
 input {
   display: block;
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Remove the fieldset default style (the border) */
@@ -108,7 +112,7 @@ fieldset {
   background-color: #efefef;
   padding: 15px;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .create-stressor-form label {
