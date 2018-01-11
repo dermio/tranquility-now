@@ -96,13 +96,19 @@ a:hover {
 input {
   display: block;
   font-size: 15px;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 10px;
   font-family: "Nunito", sans-serif;
+  border-radius: 3px;
+  border-style: none;
 }
 
 input#stress, input#activity {
   width: 100%;
+}
+
+input#duration, input#preHR, input#postHR {
+  width: 60px;
 }
 
 /* Remove the fieldset default style (the border) */
