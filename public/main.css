@@ -123,14 +123,14 @@ fieldset {
   margin: 0;
 }
 
-.create-stressor-form {
+.create-stressor-form, .edit-stressor-form {
   background-color: #efefef;
   padding: 15px;
   margin: 0 auto;
   max-width: 400px;
 }
 
-.create-stressor-form label {
+.create-stressor-form label, .edit-stressor-form label {
   font-family: "Nunito", sans-serif;
 }
 
@@ -144,6 +144,7 @@ legend {
 
 /********** Edit Stressor Form **********/
 .current-val {
+  font-family: "Nunito", sans-serif;
   color: red;
 }
 
