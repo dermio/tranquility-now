@@ -111,6 +111,11 @@ input#duration, input#preHR, input#postHR {
   width: 60px;
 }
 
+/* fix Chrome's yellow background for text input */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 /* Remove the fieldset default style (the border) */
 fieldset {
   border: none;
