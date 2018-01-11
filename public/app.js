@@ -195,7 +195,7 @@ function displayStressorChart(oneStressor) {
 
   let htmlString =
     `<nav class="navbar-stressor-chart" role="navigation">
-      <a href="#" class="return-dashboard-btn">Return to Dashboard</a>
+      <a href="#" class="return-dashboard-btn">All Stressors</a>
       <a href="#" class="edit-stressor-btn">Update Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete Stressor</a>
       <a href="#" class="display-chart-btn">Display Chart</a>
