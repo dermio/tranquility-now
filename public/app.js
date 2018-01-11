@@ -317,7 +317,7 @@ function createNewStressor(dataFromForm) {
 
       displayStressorChart(resData);
 
-      // Marius Banea says after POST request make a GET request??
+      // Mentor says after POST request make a GET request??
     }
   });
 
