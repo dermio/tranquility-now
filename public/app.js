@@ -118,11 +118,11 @@ function displayEditStressorForm(oneStressor) {
         <input type="number" name="postHR" id="postHR" min="20" max="200">
 
         <button type="submit" class="submit-stressor-btn">
-          Submit to Update Stressor
+          Update Stressor
         </button>
 
         <button type="button" class="cancel-edit-stressor-btn">
-          Cancel and back to dashboard
+          Cancel
         </button>
       </fieldset>
     </form>`;
@@ -355,11 +355,11 @@ function displayCreateNewStressorForm() {
         <input type="number" name="postHR" id="postHR" min="20" max="200" required>
 
         <button type="submit" class="submit-stressor-btn">
-          Submit new Stressor
+          Create Stressor
         </button>
 
         <button type="button" class="cancel-create-stressor-btn">
-          Cancel and back to dashboard
+          Cancel
         </button>
       </fieldset>
     </form>`;
