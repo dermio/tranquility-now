@@ -20,9 +20,12 @@ function deleteStressor(oneStressor) {
 
       // Show the user a message the DELETE request was successful
       let htmlString =
-      `<p>Successfully deleted Stress "${oneStressor.stress}" with Id "${oneStressor.id}".</p>
-      <p>Click button to return to Dashboard.</p>
-      <button class="return-dashboard-btn">Return to Dashboard</button>`;
+      `<div class="delete-message">
+        <p>Successfully deleted Stress:
+          <span class="delete-stress-val">${oneStressor.stress}</span>
+        </p>
+        <button class="return-dashboard-btn">All Stressors</button>
+      </div>`;
 
     // Render the page to inform stressor was deleted.
     $(".js-results").html(htmlString);
