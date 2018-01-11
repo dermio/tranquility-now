@@ -148,6 +148,17 @@ legend {
   color: red;
 }
 
+/********** Delete Stressor Message **********/
+.delete-message {
+  font-family: "Nunito", sans-serif;
+}
+
+.delete-stress-val {
+  font-family: "Fjalla One", sans-serif;
+  letter-spacing: 1px;
+  color: red;
+}
+
 /********** Single Card **********/
 .js-single-result {
   border: 1px solid black;
