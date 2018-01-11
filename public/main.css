@@ -101,6 +101,10 @@ input {
   font-family: "Nunito", sans-serif;
 }
 
+input#stress, input#activity {
+  width: 100%;
+}
+
 /* Remove the fieldset default style (the border) */
 fieldset {
   border: none;
