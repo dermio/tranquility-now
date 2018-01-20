@@ -17,6 +17,14 @@ body {
   margin-top: 20px;
 }
 
+/* Color Palette
+Desire: #E63946
+Honeydew: #F1FAEE
+Light Blue: #A8DADC
+Queen Blue: #457B9D
+Space Cadet: #1D3557
+*/
+
 /********** Log In or Home Screen **********/
 .login-div {
   border: 1px solid black;
