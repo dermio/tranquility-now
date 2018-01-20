@@ -521,7 +521,7 @@ function displayHomeScreen() {
     `<div class="login-div">
       <h2 class="app-name">Tranquility Now</h2>
       <p class="app-desc">Everyone experiences stress. Some stress is normal and useful, while stress that occurs chronically or for too long is unhealthy. Tranquility Now keeps track of the activities that relax you and shows you what's most effective.</p>
-      <button class="home-screen-btn">Show all entries</button>
+      <button class="home-screen-btn   btn">Show all entries</button>
     </div>`;
 
 
