@@ -25,6 +25,27 @@ Queen Blue: #457B9D
 Space Cadet: #1D3557
 */
 
+/********** Buttons **********/
+.my-btn {
+  display: inline-block;
+  margin: 0.3em;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: none;
+  font-size: 12px;
+  text-align: center;
+}
+
+.home-screen-btn {
+  background-color: #457B9D;
+  color: #FFF;
+}
+
 /********** Log In or Home Screen **********/
 .login-div {
   border: 1px solid black;
