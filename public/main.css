@@ -59,13 +59,21 @@ Space Cadet: #1D3557
 /********** Create, Read, Update, Delete Buttons **********/
 
 .submit-stressor-btn {
-  background-color: #568CAE;
+  background-color: #457B9D;
   color: #FFF;
+}
+
+.submit-stressor-btn:hover {
+  background-color: #568CAE;
 }
 
 .cancel-create-stressor-btn {
   background-color: #707593;
   color: #FFF;
+}
+
+.cancel-create-stressor-btn:hover {
+  background-color: #8186A4;
 }
 
 /********** Log In or Home Screen **********/
