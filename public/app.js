@@ -357,11 +357,11 @@ function displayCreateNewStressorForm() {
         <label for="postHR">Post Heart Rate</label>
         <input type="number" name="postHR" id="postHR" min="20" max="200" required>
 
-        <button type="submit" class="submit-stressor-btn">
+        <button type="submit" class="submit-stressor-btn my-btn">
           Create Stressor
         </button>
 
-        <button type="button" class="cancel-create-stressor-btn">
+        <button type="button" class="cancel-create-stressor-btn my-btn">
           Cancel
         </button>
       </fieldset>
