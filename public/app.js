@@ -120,11 +120,11 @@ function displayEditStressorForm(oneStressor) {
         <span class="current-val">${oneStressor.postHeartRate}</span>
         <input type="number" name="postHR" id="postHR" min="20" max="200">
 
-        <button type="submit" class="submit-stressor-btn">
+        <button type="submit" class="submit-stressor-btn my-btn">
           Update Stressor
         </button>
 
-        <button type="button" class="cancel-edit-stressor-btn">
+        <button type="button" class="cancel-edit-stressor-btn my-btn">
           Cancel
         </button>
       </fieldset>
