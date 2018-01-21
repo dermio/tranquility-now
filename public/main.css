@@ -111,6 +111,19 @@ Space Cadet: #1D3557
   padding-right: 20px;
 }
 
+/********** Single Card **********/
+.js-single-result {
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 3px;
+  /*margin-top: 10px;*/
+  margin-bottom: 10px;
+}
+
+.hideModal {
+  display: none;
+}
+
 /********** Navigation Bars **********/
 .navbar-dashboard, .navbar-stressor-chart {
   border: 1px solid red;
@@ -197,17 +210,4 @@ legend {
   font-family: "Fjalla One", sans-serif;
   letter-spacing: 1px;
   color: red;
-}
-
-/********** Single Card **********/
-.js-single-result {
-  border: 1px solid black;
-  background-color: #fff;
-  border-radius: 3px;
-  /*margin-top: 10px;*/
-  margin-bottom: 10px;
-}
-
-.hideModal {
-  display: none;
 }
