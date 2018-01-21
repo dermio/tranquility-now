@@ -24,7 +24,7 @@ function deleteStressor(oneStressor) {
         <p>Successfully deleted Stress:
           <span class="delete-stress-val">${oneStressor.stress}</span>
         </p>
-        <button class="return-dashboard-btn">All Stressors</button>
+        <button class="return-dashboard-btn my-btn">All Stressors</button>
       </div>`;
 
     // Render the page to inform stressor was deleted.
