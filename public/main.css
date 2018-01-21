@@ -41,9 +41,17 @@ Space Cadet: #1D3557
   text-align: center;
 }
 
+.my-btn:hover {
+  cursor: pointer;
+}
+
 .home-screen-btn {
   background-color: #457B9D;
   color: #FFF;
+}
+
+.home-screen-btn:hover {
+  background-color: #568CAE;
 }
 
 /********** Log In or Home Screen **********/
