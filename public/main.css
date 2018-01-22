@@ -145,6 +145,10 @@ Space Cadet: #1D3557
   display: none;
 }
 
+.dash-para-container, .dash-chart-container {
+  padding-bottom: 3px;
+}
+
 /********** Navigation Bars **********/
 .navbar-dashboard, .navbar-stressor-chart {
   /*border: 1px solid red;*/
