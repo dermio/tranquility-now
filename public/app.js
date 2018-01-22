@@ -259,7 +259,10 @@ function displayStressorChart(oneStressor) {
     console.log("clicked delete stressor button");
 
     // Call deleteStressor() to delete this stressor
-    deleteStressor(oneStressor);
+    // deleteStressor(oneStressor);
+
+    // Call confirmDeleteStressor(), which handles calling deleteStressor()
+    confirmDeleteStressor(oneStressor);
   });
 
   $(".display-chart-btn").on("click", function (event) {
