@@ -198,7 +198,7 @@ function displayStressorChart(oneStressor) {
 
   let htmlString =
     `<nav class="navbar-stressor-chart" role="navigation">
-      <a href="#" class="return-dashboard-btn">All Stressors</a>
+      <a href="#" class="all-stressors-btn">All Stressors</a>
       <a href="#" class="edit-stressor-btn">Update Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete Stressor</a>
       <a href="#" class="display-chart-btn">Display Chart</a>
@@ -238,7 +238,7 @@ function displayStressorChart(oneStressor) {
   2. Edit stressor
   3. Delete stressor */
 
-  $(".return-dashboard-btn").on("click", function (event) {
+  $(".all-stressors-btn").on("click", function (event) {
     event.preventDefault();
     displayDashBoard();
   });
