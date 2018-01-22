@@ -209,22 +209,25 @@ function displayStressorChart(oneStressor) {
         <span class="dash-chart dash-chart-stressor">Stress:</span>
         ${oneStressor.stress}
       </p>
-      <p class="chart-para">
-        <span class="dash-chart">Relaxation Activity:</span>
-        ${oneStressor.activity}
-      </p>
-      <p class="chart-para">
-        <span class="dash-chart">Duration in min:</span>
-        ${oneStressor.duration}
-      </p>
-      <p class="chart-para">
-        <span class="dash-chart">Pre Heart Rate:</span>
-        ${oneStressor.preHeartRate}
-      </p>
-      <p class="chart-para">
-        <span class="dash-chart">Post Heart Rate:</span>
-        ${oneStressor.postHeartRate}
-      </p>
+
+      <div class="dash-chart-container">
+        <p class="chart-para">
+          <span class="dash-chart">Relaxation Activity:</span>
+          ${oneStressor.activity}
+        </p>
+        <p class="chart-para">
+          <span class="dash-chart">Duration in min:</span>
+          ${oneStressor.duration}
+        </p>
+        <p class="chart-para">
+          <span class="dash-chart">Pre Heart Rate:</span>
+          ${oneStressor.preHeartRate}
+        </p>
+        <p class="chart-para">
+          <span class="dash-chart">Post Heart Rate:</span>
+          ${oneStressor.postHeartRate}
+        </p>
+      </div>
       <div class="modal hideModal" id="myModal">
         <svg class="chart">Modal for svg chart</svg>
       </div>
@@ -429,22 +432,25 @@ function displayDashBoard() {
           <span class="dash-span dash-span-stressor">Stress:</span>
           ${stressorsData[i].stress}
         </p>
-        <p class="dash-para">
-          <span class="dash-span">Relaxation Activity:</span>
-          ${stressorsData[i].activity}
-        </p>
-        <p class="dash-para">
-          <span class="dash-span">Duration in min:</span>
-          ${stressorsData[i].duration}
-        </p>
-        <p class="dash-para">
-          <span class="dash-span">Pre Heart Rate:</span>
-          ${stressorsData[i].preHeartRate}
-        </p>
-        <p class="dash-para">
-          <span class="dash-span">Post Heart Rate:</span>
-          ${stressorsData[i].postHeartRate}
-        </p>
+
+        <div class="dash-para-container">
+          <p class="dash-para">
+            <span class="dash-span">Relaxation Activity:</span>
+            ${stressorsData[i].activity}
+          </p>
+          <p class="dash-para">
+            <span class="dash-span">Duration in min:</span>
+            ${stressorsData[i].duration}
+          </p>
+          <p class="dash-para">
+            <span class="dash-span">Pre Heart Rate:</span>
+            ${stressorsData[i].preHeartRate}
+          </p>
+          <p class="dash-para">
+            <span class="dash-span">Post Heart Rate:</span>
+            ${stressorsData[i].postHeartRate}
+          </p>
+        </div>
       </div>`;
   }
 
