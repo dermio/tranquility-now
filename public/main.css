@@ -250,3 +250,30 @@ legend {
   letter-spacing: 1px;
   color: red;
 }
+
+/********** D3 chart styling **********/
+.chart-container {
+  width: 90%;
+  height: 90%;
+  border: 1px solid green;
+}
+
+.chart {
+  border: 1px solid blue;
+}
+
+.parent-Group {
+  border: 1px solid black;
+}
+
+g, text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
