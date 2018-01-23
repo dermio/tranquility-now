@@ -55,7 +55,7 @@ function confirmDeleteStressor(oneStressor) {
   swal({
     html: myText,
     buttonsStyling: false,
-    confirmButtonText: "Delete",
+    confirmButtonText: "Delete Stressor",
     confirmButtonColor: "#457B9D",
     confirmButtonClass: "my-btn delete-confirm-btn",
 
