@@ -97,8 +97,9 @@ Space Cadet: #1D3557
   font-family: "Roboto", sans-serif;
   /* background: rgba(99, 99, 99, .5); optional to darken */
 
-  /* Remove this later when add authentication to .login-form */
+  /* Remove both lines later when add authentication to .login-form */
   max-width: 425px;
+  margin: 0 auto;
 }
 
 .login-form {
