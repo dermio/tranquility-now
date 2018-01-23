@@ -19,7 +19,7 @@ function deleteStressor(oneStressor) {
       back to the client */
 
       // Show the user a message the DELETE request was successful
-      let htmlString =
+      /*let htmlString =
       `<div class="delete-message">
         <p>Successfully deleted Stress:
           <span class="delete-stress-val">${oneStressor.stress}</span>
@@ -27,19 +27,22 @@ function deleteStressor(oneStressor) {
         <button class="return-dashboard-btn my-btn">All Stressors</button>
       </div>`;
 
-    // Render the page to inform stressor was deleted.
-    $(".js-results").html(htmlString);
+      // Render the page to inform stressor was deleted.
+      $(".js-results").html(htmlString);*/
+
+      getAllStressors();
     }
   });
 
   // Event listener click button to return to Dashboard
+  /*
   $(".js-results").on("click", ".return-dashboard-btn", function (event) {
     event.preventDefault();
     console.log("[[CLICKED BUTTON, RETURN TO DASHBOARD FROM DELETE]]");
 
     // Call getAllStressors(), which calls displayDashBoard();
     getAllStressors();
-  });
+  });*/
 
 }
 
@@ -63,6 +66,11 @@ function confirmDeleteStressor(oneStressor) {
     cancelButtonText: "Cancel",
     cancelButtonColor: "#8186A4",
     cancelButtonClass: "my-btn cancel-delete-stressor-btn"
+  }).then(function (result) {
+    if (result.value) {
+      // If confirm Delete Stressor, call deleteStressor(oneStressor)
+      deleteStressor(oneStressor);
+    }
   });
 }
 
