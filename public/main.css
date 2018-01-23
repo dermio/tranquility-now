@@ -77,6 +77,10 @@ Space Cadet: #1D3557
   background-color: #8186A4;
 }
 
+.delete-stressor-btn, .cancel-delete-stressor-btn {
+  width: 50px;
+}
+
 /********** Log In or Home Screen **********/
 .login-div {
   /*border: 1px solid black;*/
