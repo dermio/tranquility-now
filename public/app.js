@@ -43,6 +43,21 @@ function deleteStressor(oneStressor) {
 
 }
 
+function confirmDeleteStressor(oneStressor) {
+  /* Using the SweetAlert2 popup function will determine if
+  deleteStressor() is called */
+
+  swal({
+    showConfirmButton: false,
+    html:
+    `<p class="delete-message">
+      Delete stressor: <span class="current-val">${oneStressor.stress}</span>?
+    </p>
+    <button class="submit-stressor-btn my-btn">Yes</button>
+    <button class="cancel-create-stressor-btn my-btn">No</button>`
+  });
+}
+
 function editStressor(updatedFormData) {
   /* The updatedStressor object from the edit stressor form
   is passed as an argument. 
