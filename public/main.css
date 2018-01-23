@@ -59,21 +59,29 @@ Space Cadet: #1D3557
 /********** Create, Read, Update, Delete Buttons **********/
 
 /* For Create, Update, and Delete buttons */
-.submit-stressor-btn, .return-dashboard-btn {
+.submit-stressor-btn,
+.return-dashboard-btn,
+.delete-confirm-btn {
   background-color: #457B9D;
   color: #FFF;
 }
 
-.submit-stressor-btn:hover, .return-dashboard-btn:hover {
+.submit-stressor-btn:hover,
+.return-dashboard-btn:hover,
+.delete-confirm-btn:hover {
   background-color: #568CAE;
 }
 
-.cancel-create-stressor-btn, .cancel-edit-stressor-btn {
+.cancel-create-stressor-btn,
+.cancel-edit-stressor-btn,
+.cancel-delete-stressor-btn {
   background-color: #707593;
   color: #FFF;
 }
 
-.cancel-create-stressor-btn:hover, .cancel-edit-stressor-btn:hover {
+.cancel-create-stressor-btn:hover,
+.cancel-edit-stressor-btn:hover,
+.cancel-delete-stressor-btn:hover {
   background-color: #8186A4;
 }
 
