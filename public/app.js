@@ -47,14 +47,19 @@ function confirmDeleteStressor(oneStressor) {
   /* Using the SweetAlert2 popup function will determine if
   deleteStressor() is called */
 
-  swal({
-    showConfirmButton: false,
-    html:
+  let myText =
     `<p class="delete-message">
       Delete stressor: <span class="current-val">${oneStressor.stress}</span>?
-    </p>
-    <button class="submit-stressor-btn my-btn">Yes</button>
-    <button class="cancel-create-stressor-btn my-btn">No</button>`
+    </p>`;
+
+  swal({
+    html: myText,
+    buttonsStyling: false,
+    confirmButtonText: "Delete Stressor",
+    confirmButtonColor: "#457B9D",
+    confirmButtonClass: "my-btn delete-confirm-btn"
+
+
   });
 }
 
