@@ -235,7 +235,7 @@ function displayStressorChart(oneStressor) {
       <a href="#" class="display-chart-btn">Display Chart</a>
     </nav>
 
-    <div class="js-single-result" id="${oneStressor.id}">
+    <div class="js-single-result" id="id-${oneStressor.id}">
       <p class="stressor-name chart-para">
         <span class="dash-chart dash-chart-stressor">Stress:</span>
         ${oneStressor.stress}
@@ -461,7 +461,7 @@ function displayDashBoard() {
   for (let i = 0; i < stressorsData.length; i++) {
     // Next populate the htmlString with stressor data
     htmlString +=
-      `<div class="js-single-result" id="${stressorsData[i].id}">
+      `<div class="js-single-result" id="id-${stressorsData[i].id}">
         <p class="stressor-name dash-para">
           <span class="dash-span dash-span-stressor">Stress:</span>
           ${stressorsData[i].stress}
@@ -517,6 +517,9 @@ function displayDashBoard() {
   $(".stressor-name").on("click", function (event) {
     event.preventDefault();
     let stressorId = $(this).parent().attr("id");
+
+    /* Remove the `id-` prefix from the stressor Id in the HTML */
+    stressorId = stressorId.slice(3);
 
     // Call getStressorById() with Id argument.
     getStressorById(stressorId);
