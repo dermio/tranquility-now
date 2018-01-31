@@ -1,3 +1,25 @@
+/********** function findStressorById **********/
+function findStressorById(stressorId) {
+  /* The stress id in the HTML has a prefix of `id-`. According
+  to CSS specs an Id is not allowed to begin with a number.
+  The object Id value from Mongo will have the a prefix of `id-` added
+  so that DOM manipulation works correctly with jQuery and D3. */
+  let stressor = STATE_DATA.data.find(function (element) {
+    /* Compare the stressor Id from the STATE_DATA with
+    a prefix of `id-` to the Id in HTML. */
+    return `id-${element.id}` === stressorId;
+  });
+  console.log(stressor);
+
+  let chartData = [
+    {typeHR: "preHeartRate", heartRate: stressor.preHeartRate},
+    {typeHR: "postHeartRate", heartRate: stressor.postHeartRate}
+  ];
+  console.log(chartData);
+  return chartData;
+
+}
+
 /********** drawChart function **********/
 function drawChart() {
   /***** Chart dimensions *****/
