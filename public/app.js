@@ -310,6 +310,26 @@ function displayStressorChart(oneStressor) {
     // Call renderChart() to display D3 chart
     renderChart(oneStressor);
   });
+
+  /* Event listener for clicking D3 button, display D3 chart.
+  See Lity documentation for event handler. */
+  $(document).on("lity:ready", function (event, instance) {
+    let triggerElem = instance.opener(); // trigger is .open-d3-button
+    let objId = triggerElem.closest(".js-single-result").attr("id");
+    console.log(objId);
+
+    /* Will iterate through STATE_DATA and find stressor Id's that match,
+    adjusting for the `id-` prefix in the HTML. Will return the the parts
+    of the stressor data needed for rendering the D3 chart. */
+    let d3ChartArg = findStressorById(objId);
+
+    drawChart(d3ChartArg);
+
+    /* Note: the resizeChart() function doesn't work correctly with
+    the Lity lightbox. */
+    resizeChart(d3ChartArg);
+  });
+
 }
 
 function getStressorById(uniqueId) {
