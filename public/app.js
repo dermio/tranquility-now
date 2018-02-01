@@ -259,7 +259,9 @@ function displayStressorChart(oneStressor) {
           ${oneStressor.postHeartRate}
         </p>
 
-        <a class="open-d3-button" href="#lity-d3" data-lity>Show chart</a>
+        <button class="open-d3-button my-btn" href="#lity-d3" data-lity>
+          Show chart
+        </button>
         <div id="lity-d3" style="background:#fff" class="lity-hide">
           <div class="chart-container"></div>
         </div>
