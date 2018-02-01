@@ -258,11 +258,21 @@ function displayStressorChart(oneStressor) {
           <span class="dash-chart">Post Heart Rate:</span>
           ${oneStressor.postHeartRate}
         </p>
+
+        <a class="open-d3-button" href="#lity-d3" data-lity>Test chart</a>
+        <div id="lity-d3" style="background:#fff" class="lity-hide">
+          D3 Chart goes here
+          <div class="chart-container"></div>
+        </div>
+
       </div>
-      <div class="modal hideModal" id="myModal">
-        <svg class="chart">Modal for svg chart</svg>
-      </div>
+
     </div>`;
+
+        /* Comes after the postHeartRate, Used as alternative modal to Lity
+        <div class="modal hideModal" id="myModal">
+          <svg class="chart">Modal for svg chart</svg>
+        </div> */
 
 
   $(".js-results").html(htmlString);
@@ -301,6 +311,55 @@ function displayStressorChart(oneStressor) {
     console.log("clicked display chart button");
     // Call renderChart() to display D3 chart
     renderChart(oneStressor);
+  });
+
+  /* Event listener for clicking D3 button, display D3 chart.
+  See Lity documentation for event handler. */
+  $(document).on("lity:ready", function (event, instance) {
+    let triggerElem = instance.opener(); // trigger is .open-d3-button
+    let objId = triggerElem.closest(".js-single-result").attr("id");
+    console.log(objId);
+
+    /* The code on line 357 that targets div.lity.lity-opened removes
+    any <svg> elements from div.chart-container. It doesn't work 100%.
+    The following code removes any <svg> child elements from
+    div.chart-container so multiple D3 charts are not rendered. */
+    $(".chart-container").empty();
+
+    /* Will iterate through STATE_DATA and find stressor Id's that match,
+    adjusting for the `id-` prefix in the HTML. Will return the the parts
+    of the stressor data needed for rendering the D3 chart. */
+    let d3ChartArg = findStressorById(objId);
+
+    drawChart(d3ChartArg);
+
+    /* Note: the resizeChart() function doesn't work correctly with
+    the Lity lightbox. */
+    resizeChart(d3ChartArg);
+  });
+
+  /* Need event handler for `lity:close` or `lity:remove`. A new <svg>
+  with a D3 chart is appended at the bottom of the page each time
+  the lightbox is opened, closed, then opened again. */
+  $(document).on("lity:close", function (event, instance) {
+    console.log("Lity lightbox closed");
+
+    /* Lity appends a new <div> to the bottom of the DOM to handle the
+    lightbox behavior. Target the <div> with the classes `.lity.lity-opened`.
+    From that <div> travese down the DOM to div.chart-container. Use
+    jQuery's .empty() method to remove all child <svg> elements. */
+    let svgChild = $(".lity.lity-opened").find(".chart-container")
+                                        .children();
+    console.log(svgChild);
+
+    let chartNum = $(".chart-container").length;
+    console.log(chartNum);
+
+    /* Target the Lity <div> that's apppended to the DOM when the
+    lightbox is opened. Remove any child <svg> elements from
+    .chart-container before closing the lightbox. */
+    $(".lity.lity-opened").find(".chart-container").empty();
+
   });
 }
 

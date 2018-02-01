@@ -62,7 +62,8 @@ function drawChart(stressArr, stressId) {
   selection by Id, all the <svg> charts will be appended to the first
   .chart-container. The other .chart-container elements won't have
   a chart displayed. */
-  let chart = d3.select(`#${stressId}`)
+  let chart = d3.select(".lity.lity-opened") // Target the Lity <div>
+                //.select(`#${stressId}`) // `#{stressId}` not in Lity <div>
                 .select(".chart-container")
               .append("svg")
                 .attr("class", "chart")
