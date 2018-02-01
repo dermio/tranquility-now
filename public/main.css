@@ -253,8 +253,10 @@ legend {
 
 /********** D3 chart styling **********/
 .chart-container {
-  width: 90%;
-  height: 90%;
+  /*width: 90%;
+  height: 90%;*/
+  width: 600px;
+  height: 450px;
   border: 1px solid green;
 }
 
