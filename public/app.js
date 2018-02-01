@@ -320,6 +320,12 @@ function displayStressorChart(oneStressor) {
     let objId = triggerElem.closest(".js-single-result").attr("id");
     console.log(objId);
 
+    /* The code on line 357 that targets div.lity.lity-opened removes
+    any <svg> elements from div.chart-container. It doesn't work 100%.
+    The following code removes any <svg> child elements from
+    div.chart-container so multiple D3 charts are not rendered. */
+    $(".chart-container").empty();
+
     /* Will iterate through STATE_DATA and find stressor Id's that match,
     adjusting for the `id-` prefix in the HTML. Will return the the parts
     of the stressor data needed for rendering the D3 chart. */
