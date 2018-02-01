@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dermio/tranquility-now.svg?branch=master)](https://travis-ci.org/dermio/tranquility-now)
 # Tranquility Now
 [Tranquility Now](https://tranquility-now.herokuapp.com/) is an app that tracks the activities that help alleviate your stress.
 
