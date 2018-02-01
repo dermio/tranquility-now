@@ -142,8 +142,8 @@ Space Cadet: #1D3557
 
 .dash-para, .chart-para {
   font-family: "Nunito", sans-serif;
-  padding-left: 20px;
-  padding-right: 20px;
+  /*padding-left: 20px;
+  padding-right: 20px;*/
 }
 
 /********** Single Card **********/
@@ -160,6 +160,8 @@ Space Cadet: #1D3557
 }
 
 .dash-para-container, .dash-chart-container {
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 3px;
 }
 
@@ -260,13 +262,13 @@ legend {
   /*border: 1px solid green;*/
 }
 
-.chart {
-  /*border: 1px solid blue;*/
+/* .chart {
+  border: 1px solid blue;
 }
 
 .parent-Group {
-  /*border: 1px solid black;*/
-}
+  border: 1px solid black;
+} */
 
 g, text {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif
@@ -283,6 +285,8 @@ g, text {
 /********** Lity lightbox styling **********/
 .open-d3-button {
   color: #000;
-  padding: 0 20px;
-  font-family: "Nunito", sans-serif;
+  padding: 10px;
+
+  background-color: #457B9D;
+  color: #FFF;
 }
