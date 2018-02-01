@@ -342,13 +342,17 @@ function displayStressorChart(oneStressor) {
     lightbox behavior. Target the <div> with the classes `.lity.lity-opened`.
     From that <div> travese down the DOM to div.chart-container. Use
     jQuery's .empty() method to remove all child <svg> elements. */
-    let it = $(".lity.lity-opened").find(".chart-container")
-                                  .children().length;
-    console.log(it);
+    let svgChild = $(".lity.lity-opened").find(".chart-container")
+                                        .children();
+    console.log(svgChild);
 
-    let count = $(".chart-container").length;
-    console.log(count)
-    //$(".lity.lity-opened").find(".chart-container").empty();
+    let chartNum = $(".chart-container").length;
+    console.log(chartNum);
+
+    /* Target the Lity <div> that's apppended to the DOM when the
+    lightbox is opened. Remove any child <svg> elements from
+    .chart-container before closing the lightbox. */
+    $(".lity.lity-opened").find(".chart-container").empty();
 
   });
 }
