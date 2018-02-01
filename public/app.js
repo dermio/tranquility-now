@@ -267,10 +267,12 @@ function displayStressorChart(oneStressor) {
 
       </div>
 
-      <div class="modal hideModal" id="myModal">
-        <svg class="chart">Modal for svg chart</svg>
-      </div>
     </div>`;
+
+        /* Comes after the postHeartRate, Used as alternative modal to Lity
+        <div class="modal hideModal" id="myModal">
+          <svg class="chart">Modal for svg chart</svg>
+        </div> */
 
 
   $(".js-results").html(htmlString);
@@ -330,6 +332,25 @@ function displayStressorChart(oneStressor) {
     resizeChart(d3ChartArg);
   });
 
+  /* Need event handler for `lity:close` or `lity:remove`. A new <svg>
+  with a D3 chart is appended at the bottom of the page each time
+  the lightbox is opened, closed, then opened again. */
+  $(document).on("lity:close", function (event, instance) {
+    console.log("Lity lightbox closed");
+
+    /* Lity appends a new <div> to the bottom of the DOM to handle the
+    lightbox behavior. Target the <div> with the classes `.lity.lity-opened`.
+    From that <div> travese down the DOM to div.chart-container. Use
+    jQuery's .empty() method to remove all child <svg> elements. */
+    let it = $(".lity.lity-opened").find(".chart-container")
+                                  .children().length;
+    console.log(it);
+
+    let count = $(".chart-container").length;
+    console.log(count)
+    //$(".lity.lity-opened").find(".chart-container").empty();
+
+  });
 }
 
 function getStressorById(uniqueId) {
