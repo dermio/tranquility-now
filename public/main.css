@@ -162,7 +162,7 @@ Space Cadet: #1D3557
 .dash-para-container, .dash-chart-container {
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
 }
 
 /********** Navigation Bars **********/
@@ -289,4 +289,7 @@ g, text {
 
   background-color: #457B9D;
   color: #FFF;
+
+  margin-top: 0;
+  margin-bottom: 10px;
 }
