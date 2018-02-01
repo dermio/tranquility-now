@@ -258,7 +258,15 @@ function displayStressorChart(oneStressor) {
           <span class="dash-chart">Post Heart Rate:</span>
           ${oneStressor.postHeartRate}
         </p>
+
+        <a class="open-d3-button" href="#lity-d3" data-lity>Test chart</a>
+        <div id="lity-d3" style="background:#fff" class="lity-hide">
+          D3 Chart goes here
+          <div class="chart-container"></div>
+        </div>
+
       </div>
+
       <div class="modal hideModal" id="myModal">
         <svg class="chart">Modal for svg chart</svg>
       </div>
