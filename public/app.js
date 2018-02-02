@@ -232,7 +232,6 @@ function displayStressorChart(oneStressor) {
       <a href="#" class="all-stressors-btn">All Stressors</a>
       <a href="#" class="edit-stressor-btn">Update Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete Stressor</a>
-      <a href="#" class="display-chart-btn">Display Chart</a>
     </nav>
 
     <div class="js-single-result" id="id-${oneStressor.id}">
@@ -513,7 +512,7 @@ function displayDashBoard() {
   let htmlString =
     `<nav class="navbar-dashboard" role="navigation">
       <a href="#" class="create-stressor-btn">Create Stressor</a>
-      <a href="#" class="logout-btn">Logout</a>
+      <a href="#" class="logout-btn">Home</a>
     </nav>`;
 
   let stressorsData = STATE_DATA.data;
