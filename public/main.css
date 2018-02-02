@@ -293,3 +293,7 @@ g, text {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
+.open-d3-button:hover {
+  background-color: #568CAE;
+}
