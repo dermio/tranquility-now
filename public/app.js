@@ -229,6 +229,7 @@ function displayStressorChart(oneStressor) {
 
   let htmlString =
     `<nav class="navbar-stressor-chart" role="navigation">
+      <div class="hamburger">Menu</div>
       <a href="#" class="all-stressors-btn">All Stressors</a>
       <a href="#" class="edit-stressor-btn">Update Stressor</a>
       <a href="#" class="delete-stressor-btn">Delete Stressor</a>
@@ -361,6 +362,17 @@ function displayStressorChart(oneStressor) {
     $(".lity.lity-opened").find(".chart-container").empty();
 
   });
+
+  /* Hamburger menu event listener */
+  $(".hamburger").on("click", function (event) {
+    if ($("nav a").css("display") === "none") {
+      $("nav a").css("display","inline-block")
+    } else {
+      $("nav a").css("display","none")
+    }
+  });
+
+  // Need resize event listner to put regular menu back from hamburger
 }
 
 function getStressorById(uniqueId) {
@@ -511,6 +523,7 @@ function displayDashBoard() {
   that appears at the top of the user's dashboard */
   let htmlString =
     `<nav class="navbar-dashboard" role="navigation">
+      <div class="hamburger">Menu</div>
       <a href="#" class="create-stressor-btn">Create Stressor</a>
       <a href="#" class="logout-btn">Home</a>
     </nav>`;
@@ -583,6 +596,17 @@ function displayDashBoard() {
     // Call getStressorById() with Id argument.
     getStressorById(stressorId);
   });
+
+  /* Hamburger menu event listener */
+  $(".hamburger").on("click", function (event) {
+    if ($("nav a").css("display") === "none") {
+      $("nav a").css("display","inline-block")
+    } else {
+      $("nav a").css("display","none")
+    }
+  });
+
+  // Need resize event listner to put regular menu back from hamburger
 
 }
 
