@@ -373,6 +373,13 @@ function displayStressorChart(oneStressor) {
   });
 
   // Need resize event listner to put regular menu back from hamburger
+  $(window).on("resize", function (event) {
+    if ($(window).width() > 440) {
+      console.log(`Window width is: ${$(window).width()}`);
+      $("nav a").css("display", "inline-block");
+    }
+  });
+
 }
 
 function getStressorById(uniqueId) {
@@ -607,6 +614,12 @@ function displayDashBoard() {
   });
 
   // Need resize event listner to put regular menu back from hamburger
+  $(window).on("resize", function (event) {
+    if ($(window).width() > 440) {
+      console.log(`Window width is: ${$(window).width()}`);
+      $("nav a").css("display", "inline-block");
+    }
+  });
 
 }
 
