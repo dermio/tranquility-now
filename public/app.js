@@ -364,7 +364,7 @@ function displayStressorChart(oneStressor) {
   });
 
   /* Hamburger menu event listener */
-  $(".hamburger").on("click", function (event) {
+  $("nav .hamburger").on("click", function (event) {
     if ($("nav a").css("display") === "none") {
       $("nav a").css("display","inline-block")
     } else {
@@ -598,7 +598,7 @@ function displayDashBoard() {
   });
 
   /* Hamburger menu event listener */
-  $(".hamburger").on("click", function (event) {
+  $("nav .hamburger").on("click", function (event) {
     if ($("nav a").css("display") === "none") {
       $("nav a").css("display","inline-block")
     } else {
