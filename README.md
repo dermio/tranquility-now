@@ -40,3 +40,7 @@ Photo by [Mario Ho](https://unsplash.com/@homarioo) on Unsplash
 
 ### License
 This project is licensed under the terms of the MIT license.
+
+### Issues
+The Lity lightbox is not responsive with the D3 chart content.
+There is an [open issue](https://github.com/dermio/tranquility-now/issues/1) for this problem.
