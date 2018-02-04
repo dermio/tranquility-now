@@ -325,7 +325,12 @@ function displayStressorChart(oneStressor) {
     any <svg> elements from div.chart-container. It doesn't work 100%.
     The following code removes any <svg> child elements from
     div.chart-container so multiple D3 charts are not rendered. */
-    $(".chart-container").empty();
+    /* $(".chart-container").empty(); jQuery way to remove <svg> */
+
+    /* D3 way to remove <svg> */
+    d3.selectAll(".chart-container")
+      .selectAll("svg")
+      .remove();
 
     /* Will iterate through STATE_DATA and find stressor Id's that match,
     adjusting for the `id-` prefix in the HTML. Will return the the parts
@@ -366,9 +371,9 @@ function displayStressorChart(oneStressor) {
   /* Hamburger menu event listener */
   $("nav .hamburger").on("click", function (event) {
     if ($("nav a").css("display") === "none") {
-      $("nav a").css("display","inline-block")
+      $("nav a").css("display", "inline-block")
     } else {
-      $("nav a").css("display","none")
+      $("nav a").css("display", "none")
     }
   });
 
@@ -607,9 +612,9 @@ function displayDashBoard() {
   /* Hamburger menu event listener */
   $("nav .hamburger").on("click", function (event) {
     if ($("nav a").css("display") === "none") {
-      $("nav a").css("display","inline-block")
+      $("nav a").css("display", "inline-block")
     } else {
-      $("nav a").css("display","none")
+      $("nav a").css("display", "none")
     }
   });
 
