@@ -4,9 +4,8 @@ html, body {
 }
 
 body {
-  /*
-  background-image: url("https://images.unsplash.com/photo-1496629062893-b0f566065d44?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb");*/
-  background-color: #F1FAEE; /* replaces above */
+  background-image: url("https://images.unsplash.com/photo-1496629062893-b0f566065d44?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb");
+  /*background-color: #F1FAEE;*/ /* replaces above */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
