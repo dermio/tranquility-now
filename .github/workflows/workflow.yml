@@ -4,6 +4,7 @@ on: push
 
 jobs:
   build:
+    needs: mongo-test
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -13,6 +14,7 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
+        echo MongoDB test ran before build.
         echo Add other actions to build,
         echo test, and deploy your project.
 
