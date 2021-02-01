@@ -1,4 +1,5 @@
-name: CI and Heroku Deploy
+name: CI and Node.js
+# Heroku deploy worklow will be in another yml file
 
 on: push
 
