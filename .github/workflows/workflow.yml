@@ -1,7 +1,10 @@
 name: CI and Node.js
 # Heroku deploy worklow will be in another yml file
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   build:
